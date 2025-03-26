@@ -107,6 +107,30 @@ class strava_api():
         self.BASE_URL = 'https://www.strava.com/api/v3/'
 
     def refresh_tokens(self):
+
+        print('Refreshing tokens... ',end='')
+
+        url = f'{self.BASE_URL}/oauth/token'
+        params = {
+            'client_id': os.getenv('STRAVA_CLIENT_ID'),
+            'client_secret': os.getenv('STRAVA_CLIENT_SECRET'),
+            'grant_type':'refresh_token',
+            'refresh_token': self.refresh_token
+        }
+
+        response = requests.post(url, params=params)
+
+        if response.status_code != 200:
+            print("Error occurred while refreshing tokens.")
+            print(json.dumps(response.json(), indent=4))
+            return
+
+        tokens = response.json()
+        self.access_token = tokens['access_token']
+        self.refresh_token = tokens['refresh_token']
+
+        print('Tokens refreshed successfully!')
+
         return
     
     def get_detailed_activity(self, activity_id):
@@ -121,6 +145,11 @@ class strava_api():
         }
 
         response = requests.get(url, headers=headers, params=params)
+
+        if response.status_code == 401:
+            self.refresh_tokens()
+            return self.get_detailed_activity(activity_id)
+
         if response.status_code != 200:
             print("Error occurred while fetching detailed activity.")
             print(json.dumps(response.json(), indent=4))
@@ -142,7 +171,9 @@ class strava_api():
         }
 
         response = requests.get(url, headers=headers, params=params)
-        print("Response Status Code:", response.status_code)
+        if response.status_code == 401:
+            self.refresh_tokens()
+            return self.get_activities()
 
         if response.status_code != 200:
             print("Error occurred while fetching activities.")
