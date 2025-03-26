@@ -7,7 +7,7 @@ load_dotenv()
 
 def extract_github_data():
 
-    print('Extracting data from GitHub...')
+    print('Extracting data from GitHub...   ', end='')
 
     # Define the URL for the GitHub API
     BASE_URL = 'https://api.github.com/'
@@ -32,9 +32,6 @@ def extract_github_data():
             'owner': repo['owner']['login'],
             'is_private': repo['private'],
         })
-
-    # Pretty-print the contents of repos
-    print(f'Extracted {len(repos)} repositories from GitHub!\n')
 
     data = []
     for repo in repositories:

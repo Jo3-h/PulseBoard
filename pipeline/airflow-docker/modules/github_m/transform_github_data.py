@@ -4,7 +4,7 @@ import json
 
 def transform_github_data():
 
-    print('Transforming GitHub data...')
+    print('Transforming GitHub data...  ', end='')
 
     # Load the data from the extracted JSON file
     with open('github_data.json', 'r') as file:

@@ -7,7 +7,7 @@ load_dotenv()
 
 def load_github_data():
 
-    print('Loading GitHub data...')
+    print('Loading GitHub data...   ', end='')
 
     # load the transformed data
     with open('github_data_transformed.json', 'r') as file:
@@ -30,7 +30,16 @@ def load_github_data():
                 """
                 INSERT INTO github_activity (event_id, event_type, repo_owner, repo_name, repo_url, is_private, action, commit_count, created_at)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (event_id) DO NOTHING
+                ON CONFLICT (event_id) 
+                DO UPDATE SET 
+                    event_type = EXCLUDED.event_type,
+                    repo_owner = EXCLUDED.repo_owner,
+                    repo_name = EXCLUDED.repo_name,
+                    repo_url = EXCLUDED.repo_url,
+                    is_private = EXCLUDED.is_private,
+                    action = EXCLUDED.action,
+                    commit_count = EXCLUDED.commit_count,
+                    created_at = EXCLUDED.created_at;
                 """, (record['event_id'], record['event_type'], record['repo_owner'], record['repo_name'], record['repo_url'], record['is_private'], record['action'], record['commit_count'], record['created_at'])
             )
 
@@ -48,7 +57,5 @@ def load_github_data():
             cursor.close()
         if connection:
             connection.close()
-
-
 
     return
