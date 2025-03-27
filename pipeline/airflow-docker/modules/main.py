@@ -11,8 +11,8 @@ def main():
 
     tests = {
         'github':False,
-        'leetcode':False,
-        'strava':True,
+        'leetcode':True,
+        'strava':False,
     }
 
     print('---> Testing pipeline elements <---\n')
