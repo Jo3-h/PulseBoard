@@ -1,0 +1,23 @@
+[
+    {
+        "badge_id": "6615893",
+        "badge_name": "50 Days Badge 2025",
+        "icon": "https://assets.leetcode.com/static_assets/others/lg2550.png",
+        "icon_gif": "https://assets.leetcode.com/static_assets/others/2550.gif",
+        "date_received": "2025-03-23"
+    },
+    {
+        "badge_id": "6313004",
+        "badge_name": "LeetCode 75",
+        "icon": "https://assets.leetcode.com/static_assets/others/LeetCode_75.png",
+        "icon_gif": "https://assets.leetcode.com/static_assets/others/LeetCode_75.gif",
+        "date_received": "2025-02-27"
+    },
+    {
+        "badge_id": "5203956",
+        "badge_name": "Introduction to Pandas",
+        "icon": "https://assets.leetcode.com/static_assets/others/Introduction_to_Pandas_Badge.png",
+        "icon_gif": "https://assets.leetcode.com/static_assets/others/Introduction_to_Pandas.gif",
+        "date_received": "2024-10-22"
+    }
+]

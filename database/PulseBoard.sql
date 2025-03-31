@@ -2,6 +2,37 @@
 -- Please log an issue at https://github.com/pgadmin-org/pgadmin4/issues/new/choose if you find any bugs, including reproduction steps.
 BEGIN;
 
+---------- RESUME TABLES
+
+CREATE TABLE IF NOT EXISTS public.experience
+(
+	id serial NOT NULL,
+	PRIMARY KEY (id)
+)
+
+CREATE TABLE IF NOT EXISTS public.education
+(
+	id serial NOT NULL,
+	PRIMARY KEY (id)
+)
+
+CREATE TABLE IF NOT EXISTS public.projects
+(
+	id serial NOT NULL,
+	PRIMARY KEY (id)
+)
+
+CREATE TABLE IF NOT EXISTS public.references
+(
+	id serial NOT NULL,
+	name VARCHAR(30),
+	phone_number VARCHAR(30),
+	email VARCHAR(30),
+	
+	PRIMARY KEY (id)
+)
+
+---------- GITHUB TABLES
 
 CREATE TABLE IF NOT EXISTS public.github_activity
 (
@@ -18,24 +49,72 @@ CREATE TABLE IF NOT EXISTS public.github_activity
     PRIMARY KEY (id)
 );
 
+---------- LEETCODE TABLES
+
+/*
+Table to hold information on recent accepted submissions, solutions, and contest participation. 
+Note that can only pull information on 15 most recent submissions and solutions.
+*/
 CREATE TABLE IF NOT EXISTS public.leetcode_activity
 (
     id serial NOT NULL,
     event_id text UNIQUE NOT NULL,
     event_type text NOT NULL CHECK (event_type IN ('Submission','Solution','Contest','Discussion')),
     problem_name text,
+	problem_description text,
     problem_url text,
     created_at timestamp without time zone NOT NULL DEFAULT NOW(),
-    status text CHECK (status IN ('Accepted','Wrong Answer','Time Limit Exceeded')),
+    status text CHECK (status IN ('Accepted','Wrong Answer','Time Limit Exceeded', 'Submitted')),
     difficulty text CHECK (difficulty IN ('Easy','Medium','Hard')),
-    runtime text,
-    memory text,
-    language text,
+	solution_name text,
+	solution_content text,
     solution_url text,
-    contest_name text,
-    ranking integer,
+	topics text,
+	total_accepted VARCHAR(20),
+	total_submissions VARCHAR(20),
+	total_accepted_ratio VARCHAR(20),
+	hits integer,
+	likes integer,
+	dislikes integer,
     PRIMARY KEY (id)
 );
+
+/*
+Table to store user stats and summary data which is aggregations and counts of solutions rather than
+invididual events.
+*/
+CREATE TABLE IF NOT EXISTS public.leetcode_summary
+(
+	id serial NOT NULL,
+	username text,
+	
+	PRIMARY KEY (id)
+);
+
+/*
+Table to store information on badges received from leetcode and links to badge icons and gifs.
+*/
+CREATE TABLE IF NOT EXISTS public.leetcode_badges
+(
+	id serial NOT NULL,
+	badge_id UNIQUE NOT NULL,
+	badge_name text NOT NULL,
+	icon text,
+	icon_gif text,
+	date_received date,
+	PRIMARY KEY (id)
+)
+
+/*
+Table to store full submission calendar to use for activity calendar on frontend
+*/
+CREATE TABLE IF NOT EXISTS public.leetcode_calendar
+(
+	id serial NOT NULL,
+	PRIMARY KEY (id)
+)
+
+---------- STRAVA ACTIVITY
 
 CREATE TABLE IF NOT EXISTS public.strava_activity
 (
