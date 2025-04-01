@@ -30,7 +30,7 @@ def execute_query(t: str, cursor, record):
             )
         )
     
-    else if t == 'events':
+    elif t == 'events':
         cursor.execute(
             """
             INSERT INTO leetcode_activity (event_id, event_type, problem_name, problem_description, problem_url, created_at, status, difficulty, solution_name, solution_content, solution_url, topics, total_accepted, total_submissions, total_accepted_ratio, hits, likes, dislikes)
@@ -78,7 +78,7 @@ def execute_query(t: str, cursor, record):
             )
         )
 
-    else if t == 'users':
+    elif t == 'users':
         cursor.execute(
             """
             INSERT INTO leetcode_summary (username, date, accepted_easy, accepted_medium, accepted_hard, failed_easy, failed_medium, failed_hard, untouched_easy, untouched_medium, untouched_hard, beats_easy, beats_medium, beats_hard)
@@ -118,7 +118,7 @@ def execute_query(t: str, cursor, record):
             )
         )
 
-    else if t == 'calendars':
+    elif t == 'calendars':
         cursor.execute(
             """
             INSERT INTO leetcode_calendar (date, count)
