@@ -109,7 +109,7 @@ def transform_leetcode_data():
     calendar_data = [
         {
         "date": datetime.utcfromtimestamp(int(timestamp)).strftime('%Y-%m-%d'),
-        "int": count
+        "count": count
         }
     for timestamp, count in calendar.items()
     ]

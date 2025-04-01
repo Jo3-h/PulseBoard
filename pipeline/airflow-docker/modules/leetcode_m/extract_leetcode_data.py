@@ -5,7 +5,6 @@ import os
 import requests
 import json
 from dotenv import load_dotenv
-from bs4 import BeautifulSoup as bs
 import time
 from datetime import datetime 
 
