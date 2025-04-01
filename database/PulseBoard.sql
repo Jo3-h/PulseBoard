@@ -87,7 +87,19 @@ CREATE TABLE IF NOT EXISTS public.leetcode_summary
 (
 	id serial NOT NULL,
 	username text,
-	
+	date DATE,
+	accepted_easy integer,
+	accepted_medium integer,
+	accepted_hard integer,
+	failed_easy integer,
+	failed_medium integer, 
+	failed_hard integer,
+	untouched_easy integer,
+	untouched_medium integer,
+	untouched_hard integer,
+	beats_easy double precision,
+	beats_medium double precision,
+	beats_hard double precision,
 	PRIMARY KEY (id)
 );
 
@@ -114,7 +126,7 @@ CREATE TABLE IF NOT EXISTS public.leetcode_calendar
 	PRIMARY KEY (id)
 )
 
----------- STRAVA ACTIVITY
+---------- STRAVA TABLES
 
 CREATE TABLE IF NOT EXISTS public.strava_activity
 (
