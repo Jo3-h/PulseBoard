@@ -638,7 +638,6 @@ class leetcode_api:
                     'likes':question_data['likes'],
                     'dislikes':question_data['dislikes'],
                 })
-                break
 
         
         # Extract recent solution data
@@ -663,7 +662,6 @@ class leetcode_api:
                 'likes':0,
                 'dislikes':0,
             })
-            break
 
         # Extract profile summary information
         summary_temp = {

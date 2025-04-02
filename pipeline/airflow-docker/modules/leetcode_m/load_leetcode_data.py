@@ -189,6 +189,16 @@ def load_leetcode_data():
     load_data('leetcode_user_data.json', 'users', connection)
     load_data('leetcode_calendar_data.json', 'calendars', connection)
 
+    # Trigger functions to distribute data to event tables
+    try:
+        cursor = connection.cursor()
+        cursor.execute("SELECT leetcode_event_distribute_values();")
+        connection.commit()
+    except Exception as e:
+        print(f'\033[91mAn error occurred {e}\033[0m')
+        if connection:
+            connection.rollback()
+
     if connection:
         connection.close()
 
