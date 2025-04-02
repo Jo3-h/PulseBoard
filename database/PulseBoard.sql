@@ -7,20 +7,21 @@ BEGIN;
 CREATE TABLE IF NOT EXISTS public.experience
 (
 	id serial NOT NULL,
+	
 	PRIMARY KEY (id)
-)
+);
 
 CREATE TABLE IF NOT EXISTS public.education
 (
 	id serial NOT NULL,
 	PRIMARY KEY (id)
-)
+);
 
 CREATE TABLE IF NOT EXISTS public.projects
 (
 	id serial NOT NULL,
 	PRIMARY KEY (id)
-)
+);
 
 CREATE TABLE IF NOT EXISTS public.references
 (
@@ -30,7 +31,7 @@ CREATE TABLE IF NOT EXISTS public.references
 	email VARCHAR(30),
 	
 	PRIMARY KEY (id)
-)
+);
 
 ---------- GITHUB TABLES
 
@@ -65,7 +66,7 @@ CREATE TABLE IF NOT EXISTS public.leetcode_activity
     problem_url text,
     created_at timestamp without time zone NOT NULL DEFAULT NOW(),
     status text CHECK (status IN ('Accepted','Wrong Answer','Time Limit Exceeded', 'Submitted')),
-    difficulty text CHECK (difficulty IN ('Easy','Medium','Hard')),
+    difficulty text,
 	solution_name text,
 	solution_content text,
     solution_url text,
@@ -87,7 +88,7 @@ CREATE TABLE IF NOT EXISTS public.leetcode_summary
 (
 	id serial NOT NULL,
 	username text,
-	date DATE,
+	date DATE UNIQUE,
 	accepted_easy integer,
 	accepted_medium integer,
 	accepted_hard integer,
@@ -100,6 +101,7 @@ CREATE TABLE IF NOT EXISTS public.leetcode_summary
 	beats_easy double precision,
 	beats_medium double precision,
 	beats_hard double precision,
+	ranking integer,
 	PRIMARY KEY (id)
 );
 
@@ -109,13 +111,13 @@ Table to store information on badges received from leetcode and links to badge i
 CREATE TABLE IF NOT EXISTS public.leetcode_badges
 (
 	id serial NOT NULL,
-	badge_id UNIQUE NOT NULL,
+	badge_id integer UNIQUE NOT NULL,
 	badge_name text NOT NULL,
 	icon text,
 	icon_gif text,
 	date_received date,
 	PRIMARY KEY (id)
-)
+);
 
 /*
 Table to store full submission calendar to use for activity calendar on frontend
@@ -123,10 +125,12 @@ Table to store full submission calendar to use for activity calendar on frontend
 CREATE TABLE IF NOT EXISTS public.leetcode_calendar
 (
 	id serial NOT NULL,
+	date DATE UNIQUE,
+	events integer, 
 	PRIMARY KEY (id)
-)
+);
 
----------- STRAVA TABLES
+---------- STRAVA ACTIVITY
 
 CREATE TABLE IF NOT EXISTS public.strava_activity
 (
