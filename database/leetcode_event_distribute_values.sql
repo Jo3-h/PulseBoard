@@ -1,5 +1,6 @@
+DROP FUNCTION leetcode_event_distribute_values();
 CREATE OR REPLACE FUNCTION leetcode_event_distribute_values()
-RETURNS TRIGGER AS $$
+RETURNS VOID AS $$
 BEGIN
 	UPDATE leetcode_activity sol
 	SET
@@ -11,7 +12,6 @@ BEGIN
 	WHERE sol.problem_name = sub.problem_name
 	AND sol.event_type = 'Solution'
 	AND sub.event_type = 'Submission';
-
-	RETURN NEW;
+	
 END;
 $$ LANGUAGE plpgsql;
