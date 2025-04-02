@@ -56,8 +56,8 @@
         "total_submissions": "134.2K",
         "total_accepted_ratio": "52.3%",
         "hits": null,
-        "likes": 298,
-        "dislikes": 22
+        "likes": 300,
+        "dislikes": 23
     },
     {
         "event_id": 1592567694,
@@ -76,7 +76,7 @@
         "total_submissions": "366.4K",
         "total_accepted_ratio": "60.4%",
         "hits": null,
-        "likes": 2813,
+        "likes": 2814,
         "dislikes": 81
     },
     {
@@ -193,7 +193,7 @@
         "solution_url": "",
         "topics": "Array, Two Pointers, Breadth-First Search, Union Find, Sorting, Heap (Priority Queue), Matrix",
         "total_accepted": "90.6K",
-        "total_submissions": "151.8K",
+        "total_submissions": "151.9K",
         "total_accepted_ratio": "59.7%",
         "hits": null,
         "likes": 1030,

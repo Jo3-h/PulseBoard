@@ -95,8 +95,8 @@
             "solution_url": "",
             "topics": "Array",
             "stats": "{\"totalAccepted\": \"70.1K\", \"totalSubmission\": \"134.2K\", \"totalAcceptedRaw\": 70106, \"totalSubmissionRaw\": 134172, \"acRate\": \"52.3%\"}",
-            "likes": 298,
-            "dislikes": 22
+            "likes": 300,
+            "dislikes": 23
         },
         {
             "event_id": "1592567694",
@@ -110,7 +110,7 @@
             "solution_url": "",
             "topics": "Array, Dynamic Programming",
             "stats": "{\"totalAccepted\": \"221.2K\", \"totalSubmission\": \"366.4K\", \"totalAcceptedRaw\": 221201, \"totalSubmissionRaw\": 366396, \"acRate\": \"60.4%\"}",
-            "likes": 2813,
+            "likes": 2814,
             "dislikes": 81
         },
         {
@@ -199,7 +199,7 @@
             "timestamp": "1743125656",
             "solution_url": "",
             "topics": "Array, Two Pointers, Breadth-First Search, Union Find, Sorting, Heap (Priority Queue), Matrix",
-            "stats": "{\"totalAccepted\": \"90.6K\", \"totalSubmission\": \"151.8K\", \"totalAcceptedRaw\": 90630, \"totalSubmissionRaw\": 151849, \"acRate\": \"59.7%\"}",
+            "stats": "{\"totalAccepted\": \"90.6K\", \"totalSubmission\": \"151.9K\", \"totalAcceptedRaw\": 90631, \"totalSubmissionRaw\": 151859, \"acRate\": \"59.7%\"}",
             "likes": 1030,
             "dislikes": 48
         },
@@ -214,7 +214,7 @@
             "timestamp": "1743035905",
             "solution_url": "",
             "topics": "Array, Hash Table, Sorting",
-            "stats": "{\"totalAccepted\": \"138.1K\", \"totalSubmission\": \"181.9K\", \"totalAcceptedRaw\": 138110, \"totalSubmissionRaw\": 181933, \"acRate\": \"75.9%\"}",
+            "stats": "{\"totalAccepted\": \"138.1K\", \"totalSubmission\": \"181.9K\", \"totalAcceptedRaw\": 138116, \"totalSubmissionRaw\": 181939, \"acRate\": \"75.9%\"}",
             "likes": 783,
             "dislikes": 45
         },
@@ -229,7 +229,7 @@
             "timestamp": "1743030866",
             "solution_url": "",
             "topics": "Array, Design, Prefix Sum",
-            "stats": "{\"totalAccepted\": \"678.8K\", \"totalSubmission\": \"1M\", \"totalAcceptedRaw\": 678821, \"totalSubmissionRaw\": 1004158, \"acRate\": \"67.6%\"}",
+            "stats": "{\"totalAccepted\": \"678.8K\", \"totalSubmission\": \"1M\", \"totalAcceptedRaw\": 678836, \"totalSubmissionRaw\": 1004177, \"acRate\": \"67.6%\"}",
             "likes": 3448,
             "dislikes": 1954
         },
@@ -274,7 +274,7 @@
             "timestamp": "1742948951",
             "solution_url": "",
             "topics": "Array, Math, Sorting, Matrix",
-            "stats": "{\"totalAccepted\": \"135.1K\", \"totalSubmission\": \"200.3K\", \"totalAcceptedRaw\": 135148, \"totalSubmissionRaw\": 200304, \"acRate\": \"67.5%\"}",
+            "stats": "{\"totalAccepted\": \"135.1K\", \"totalSubmission\": \"200.3K\", \"totalAcceptedRaw\": 135149, \"totalSubmissionRaw\": 200305, \"acRate\": \"67.5%\"}",
             "likes": 1075,
             "dislikes": 72
         },
@@ -304,7 +304,7 @@
             "timestamp": "1742897381",
             "solution_url": "",
             "topics": "Array, Binary Search",
-            "stats": "{\"totalAccepted\": \"2.6M\", \"totalSubmission\": \"5.5M\", \"totalAcceptedRaw\": 2563194, \"totalSubmissionRaw\": 5533711, \"acRate\": \"46.3%\"}",
+            "stats": "{\"totalAccepted\": \"2.6M\", \"totalSubmission\": \"5.5M\", \"totalAcceptedRaw\": 2563250, \"totalSubmissionRaw\": 5533794, \"acRate\": \"46.3%\"}",
             "likes": 21591,
             "dislikes": 562
         },
@@ -319,7 +319,7 @@
             "timestamp": "1742867078",
             "solution_url": "",
             "topics": "Array, Sorting",
-            "stats": "{\"totalAccepted\": \"106.4K\", \"totalSubmission\": \"153.8K\", \"totalAcceptedRaw\": 106383, \"totalSubmissionRaw\": 153787, \"acRate\": \"69.2%\"}",
+            "stats": "{\"totalAccepted\": \"106.4K\", \"totalSubmission\": \"153.8K\", \"totalAcceptedRaw\": 106384, \"totalSubmissionRaw\": 153788, \"acRate\": \"69.2%\"}",
             "likes": 584,
             "dislikes": 34
         },
