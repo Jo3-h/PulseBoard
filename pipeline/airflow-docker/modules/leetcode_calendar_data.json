@@ -1,386 +1,394 @@
 [
     {
         "date": "2025-01-02",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-01-07",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-01-08",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-01-09",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-01-13",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-01-15",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-01-16",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-01-21",
-        "int": 3
+        "events": 3
     },
     {
         "date": "2025-01-23",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-01-24",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-01-28",
-        "int": 24
+        "events": 24
     },
     {
         "date": "2025-01-31",
-        "int": 5
+        "events": 5
     },
     {
         "date": "2025-02-02",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-02-03",
-        "int": 17
+        "events": 17
     },
     {
         "date": "2025-02-04",
-        "int": 11
+        "events": 11
     },
     {
         "date": "2025-02-05",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2025-02-06",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-02-07",
-        "int": 21
+        "events": 21
     },
     {
         "date": "2025-02-08",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-02-09",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-02-10",
-        "int": 10
+        "events": 10
     },
     {
         "date": "2025-02-11",
-        "int": 8
+        "events": 8
     },
     {
         "date": "2025-02-12",
-        "int": 18
+        "events": 18
     },
     {
         "date": "2025-02-13",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2025-02-14",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-02-18",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-02-21",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-02-24",
-        "int": 8
+        "events": 8
     },
     {
         "date": "2025-02-27",
-        "int": 13
+        "events": 13
     },
     {
         "date": "2025-03-03",
-        "int": 6
+        "events": 6
     },
     {
         "date": "2025-03-04",
-        "int": 22
+        "events": 22
     },
     {
         "date": "2025-03-05",
-        "int": 9
+        "events": 9
     },
     {
         "date": "2025-03-06",
-        "int": 7
+        "events": 7
     },
     {
         "date": "2025-03-07",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-03-08",
-        "int": 3
+        "events": 3
     },
     {
         "date": "2025-03-09",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-03-10",
-        "int": 8
+        "events": 8
     },
     {
         "date": "2025-03-11",
-        "int": 7
+        "events": 7
     },
     {
         "date": "2025-03-12",
-        "int": 3
+        "events": 3
     },
     {
         "date": "2025-03-13",
-        "int": 20
+        "events": 20
     },
     {
         "date": "2025-03-14",
-        "int": 11
+        "events": 11
     },
     {
         "date": "2025-03-15",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2025-03-16",
-        "int": 22
+        "events": 22
     },
     {
         "date": "2025-03-17",
-        "int": 8
+        "events": 8
     },
     {
         "date": "2025-03-18",
-        "int": 14
+        "events": 14
     },
     {
         "date": "2025-03-19",
-        "int": 8
+        "events": 8
     },
     {
         "date": "2025-03-20",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2025-03-21",
-        "int": 5
+        "events": 5
     },
     {
         "date": "2025-03-22",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-03-23",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2025-03-24",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-03-25",
-        "int": 3
+        "events": 3
     },
     {
         "date": "2025-03-26",
-        "int": 8
+        "events": 8
     },
     {
         "date": "2025-03-27",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-03-28",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-03-29",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2025-03-30",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2025-03-31",
-        "int": 2
+        "events": 2
+    },
+    {
+        "date": "2025-04-01",
+        "events": 4
+    },
+    {
+        "date": "2025-04-02",
+        "events": 7
     },
     {
         "date": "2024-10-11",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2024-10-12",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2024-10-13",
-        "int": 6
+        "events": 6
     },
     {
         "date": "2024-10-14",
-        "int": 11
+        "events": 11
     },
     {
         "date": "2024-10-15",
-        "int": 6
+        "events": 6
     },
     {
         "date": "2024-10-16",
-        "int": 25
+        "events": 25
     },
     {
         "date": "2024-10-17",
-        "int": 6
+        "events": 6
     },
     {
         "date": "2024-10-20",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2024-10-21",
-        "int": 16
+        "events": 16
     },
     {
         "date": "2024-10-22",
-        "int": 38
+        "events": 38
     },
     {
         "date": "2024-10-23",
-        "int": 16
+        "events": 16
     },
     {
         "date": "2024-10-24",
-        "int": 8
+        "events": 8
     },
     {
         "date": "2024-10-25",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2024-10-27",
-        "int": 5
+        "events": 5
     },
     {
         "date": "2024-10-28",
-        "int": 3
+        "events": 3
     },
     {
         "date": "2024-10-30",
-        "int": 6
+        "events": 6
     },
     {
         "date": "2024-11-04",
-        "int": 10
+        "events": 10
     },
     {
         "date": "2024-11-05",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2024-11-06",
-        "int": 6
+        "events": 6
     },
     {
         "date": "2024-11-07",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2024-11-11",
-        "int": 8
+        "events": 8
     },
     {
         "date": "2024-11-12",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2024-11-13",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2024-11-18",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2024-11-26",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2024-11-28",
-        "int": 4
+        "events": 4
     },
     {
         "date": "2024-11-29",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2024-12-02",
-        "int": 5
+        "events": 5
     },
     {
         "date": "2024-12-03",
-        "int": 5
+        "events": 5
     },
     {
         "date": "2024-12-05",
-        "int": 3
+        "events": 3
     },
     {
         "date": "2024-12-06",
-        "int": 6
+        "events": 6
     },
     {
         "date": "2024-12-07",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2024-12-16",
-        "int": 12
+        "events": 12
     },
     {
         "date": "2024-12-17",
-        "int": 1
+        "events": 1
     },
     {
         "date": "2024-12-18",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2024-12-19",
-        "int": 2
+        "events": 2
     },
     {
         "date": "2024-12-20",
-        "int": 3
+        "events": 3
     },
     {
         "date": "2024-12-21",
-        "int": 2
+        "events": 2
     }
 ]

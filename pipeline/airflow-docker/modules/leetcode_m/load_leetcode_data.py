@@ -51,7 +51,7 @@ def execute_query(t: str, cursor, record):
                 topics = EXCLUDED.topics,
                 total_accepted = EXCLUDED.total_accepted,
                 total_submissions = EXCLUDED.total_submissions,
-                total_accepted_ration = EXCLUDED.total_accepted_ratio,
+                total_accepted_ratio = EXCLUDED.total_accepted_ratio,
                 hits = EXCLUDED.hits, 
                 likes = EXCLUDED.likes,
                 dislikes = EXCLUDED.dislikes;
@@ -68,7 +68,7 @@ def execute_query(t: str, cursor, record):
                 record['solution_name'],
                 record['solution_content'],
                 record['solution_url'],
-                recrod['topics'],
+                record['topics'],
                 record['total_accepted'],
                 record['total_submissions'],
                 record['total_accepted_ratio'],
@@ -81,8 +81,8 @@ def execute_query(t: str, cursor, record):
     elif t == 'users':
         cursor.execute(
             """
-            INSERT INTO leetcode_summary (username, date, accepted_easy, accepted_medium, accepted_hard, failed_easy, failed_medium, failed_hard, untouched_easy, untouched_medium, untouched_hard, beats_easy, beats_medium, beats_hard)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO leetcode_summary (username, date, accepted_easy, accepted_medium, accepted_hard, failed_easy, failed_medium, failed_hard, untouched_easy, untouched_medium, untouched_hard, beats_easy, beats_medium, beats_hard, ranking)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (date)
             DO UPDATE SET
                 username = EXCLUDED.username,
@@ -98,7 +98,8 @@ def execute_query(t: str, cursor, record):
                 untouched_hard = EXCLUDED.untouched_hard,
                 beats_easy = EXCLUDED.beats_easy,
                 beats_medium = EXCLUDED.beats_medium,
-                beats_hard = EXCLUDED.beats_hard;
+                beats_hard = EXCLUDED.beats_hard,
+                ranking = EXCLUDED.ranking;
             """
             , (
                 record['username'],
@@ -114,23 +115,24 @@ def execute_query(t: str, cursor, record):
                 record['untouched_hard'],
                 record['beats_easy'],
                 record['beats_medium'],
-                record['beats_hard']
+                record['beats_hard'],
+                record['ranking']
             )
         )
 
     elif t == 'calendars':
         cursor.execute(
             """
-            INSERT INTO leetcode_calendar (date, count)
+            INSERT INTO leetcode_calendar (date, events)
             VALUES (%s, %s)
             ON CONFLICT (date)
             DO UPDATE SET
                 date = EXCLUDED.date,
-                count = EXCLUDED.count;
+                events = EXCLUDED.events;
             """
             , (
                 record['date'],
-                record['count']
+                record['events']
             )
         )
 
@@ -142,20 +144,22 @@ def load_data(file_name: str, t: str, connection):
     with open(file_name, 'r') as file:
         data = json.load(file)
 
+    print(f'\t-> Loading {t} data from {file_name}... ', end='')
+
     # try using the connection to database to load data
     try:
         cursor = connection.cursor()
 
         for record in data:
-            execute_query(type, cursor, record)
+            execute_query(t, cursor, record)
         
         connection.commit()
 
-        print('Data loaded successfully')
+        print('\033[92mSuccess!\033[0m')
     
     except Exception as e:
 
-        print(f'An error occurred {e}')
+        print(f'\033[91mAn error occurred {e}\033[0m')
         if connection:
             connection.rollback()
 
@@ -168,7 +172,7 @@ def load_data(file_name: str, t: str, connection):
 
 def load_leetcode_data():
 
-    print('Loading LeetCode data...  ', end='')
+    print('Loading LeetCode data...\n')
 
     # create a connection to the postgres db
     connection = psycopg2.connect(
@@ -176,7 +180,7 @@ def load_leetcode_data():
         user = os.getenv('DB_USER'),
         password = os.getenv('DB_PASS'),
         host = os.getenv('DB_HOST'),
-        port = os.getend('DB_PORT')
+        port = os.getenv('DB_PORT')
     )
 
     # import data for each of the transformed files
@@ -189,6 +193,6 @@ def load_leetcode_data():
         connection.close()
 
     # log the finish of the process
-    print('Data loaded successfully!\n')
+    print('\nData loaded successfully!\n')
 
     return

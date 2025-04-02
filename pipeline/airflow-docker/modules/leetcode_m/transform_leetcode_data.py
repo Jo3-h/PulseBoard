@@ -47,7 +47,7 @@ def transform_leetcode_data():
             'total_accepted': stats['totalAccepted'],
             'total_submissions': stats['totalSubmission'],
             'total_accepted_ratio': stats['acRate'],
-            'hits': 0,
+            'hits': None,
             'likes': submission['likes'],
             'dislikes': submission['dislikes'],
         })
@@ -57,7 +57,7 @@ def transform_leetcode_data():
             'event_id' : solution['event_id'],
             'event_type' : solution['event_type'],
             'problem_name': solution['problem_name'],
-            'problem_description':'',
+            'problem_description':None,
             'problem_url': solution['problem_url'],
             'created_at' : solution['timestamp'],
             'status': 'Submitted',
@@ -65,9 +65,9 @@ def transform_leetcode_data():
             'solution_name' : solution['solution_name'],
             'solution_content': solution['solution_content'],
             'solution_url' : solution['solution_url'],
-            'total_accepted': 0,
-            'total_submissions': 0,
-            'total_accepted_ratio': 0,
+            'total_accepted': None,
+            'total_submissions': None,
+            'total_accepted_ratio': None,
             'topics': solution['topics'],
             'hits': solution['hits'],
             'likes': solution['likes'],
@@ -80,9 +80,9 @@ def transform_leetcode_data():
 
 
     # Transform the user data
-    user = data['summary']['data']
+    user = data['summary'][0]['data']
     user_data = {
-        'username' : data['summary']['username'],
+        'username' : data['summary'][0]['username'],
         'date' : datetime.today().strftime('%Y-%m-%d'),
         'accepted_easy':user['numAcceptedQuestions'][0]['count'],
         'accepted_medium':user['numAcceptedQuestions'][1]['count'],
@@ -96,10 +96,13 @@ def transform_leetcode_data():
         'beats_easy': user['userSessionBeatsPercentage'][0]['percentage'],
         'beats_medium': user['userSessionBeatsPercentage'][1]['percentage'],
         'beats_hard': user['userSessionBeatsPercentage'][2]['percentage'],
+        'ranking':user['ranking'],
     }
+    user_data = [user_data]
 
     with open('leetcode_user_data.json', 'w') as file:
         json.dump(user_data, file, indent=4)
+
 
 
     # Transform the calendar data
@@ -109,7 +112,7 @@ def transform_leetcode_data():
     calendar_data = [
         {
         "date": datetime.utcfromtimestamp(int(timestamp)).strftime('%Y-%m-%d'),
-        "count": count
+        "events": count
         }
     for timestamp, count in calendar.items()
     ]

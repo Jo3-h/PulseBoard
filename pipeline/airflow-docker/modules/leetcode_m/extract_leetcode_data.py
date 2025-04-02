@@ -666,10 +666,12 @@ class leetcode_api:
             break
 
         # Extract profile summary information
-        return_payload['summary'] = {
+        summary_temp = {
             'username': self.username,
             'data': self.get_user_profile_user_question_progress_v2(),
-            }
+        }
+        summary_temp['data']['ranking'] = self.get_user_public_profile()['data']['matchedUser']['profile']['ranking']
+        return_payload['summary'] = [summary_temp]
 
         # extract calendar data
         return_payload['calendar'] = self.get_user_profile_calendar()
