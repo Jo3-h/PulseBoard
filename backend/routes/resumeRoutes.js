@@ -1,13 +1,13 @@
-// routes/stravaRoutes.js
+// routes/resumeRoutes.js
 
 const express = require("express");
 const router = express.Router();
 
 // Import controllers
-const { getStravaActivities } = require("../controllers/stravaController");
+const { getResume } = require("../controllers/resumeController");
 
 // Define endpoints
-router.get("/activities", getStravaActivities);
+router.get("/", getResume);
 
 // Export router
 module.exports = router;
