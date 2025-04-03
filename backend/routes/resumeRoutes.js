@@ -12,7 +12,7 @@ const {
 } = require("../controllers/resumeController");
 
 // Define endpoints
-router.get("/", getEducation);
+router.get("/education", getEducation);
 router.get("/experience", getExperience);
 router.get("/projects", getProjects);
 router.get("/references", getReferences);

@@ -3,14 +3,14 @@
 const logger = require("../config/logger");
 
 // Import strava models
-const Strava_activity = require("../models/strava_activity");
+const { strava_activity } = require("../models");
 
 // Define controller functions
 
 // Function to retrieve strava activity data
 const getStravaActivities = async (req, res) => {
   try {
-    const activities = await Strava_activity.findAll();
+    const activities = await strava_activity.findAll();
     res.status(200).json(activities);
   } catch (error) {
     logger.error(`Error fetching strava activity: ${error.message}`);

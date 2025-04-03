@@ -2,17 +2,17 @@
 const logger = require("../config/logger");
 
 // Import leetcode models
-const Leetcode_activity = require("../models/leetcode_activity");
-const Leetcode_badges = require("../models/leetcode_badges");
-const Leetcode_calendar = require("../models/leetcode_calendar");
-const Leetcode_summary = require("../models/leetcode_summary");
+const { leetcode_activity } = require("../models");
+const { leetcode_badges } = require("../models");
+const { leetcode_calendar } = require("../models");
+const { leetcode_summary } = require("../models");
 
 // Define controller functions
 
 // Function to retrieve leetcode activity data
 const getLeetcodeActivity = async (req, res) => {
   try {
-    const activities = await Leetcode_activity.findAll();
+    const activities = await leetcode_activity.findAll();
     res.status(200).json(activities);
   } catch (error) {
     logger.error(`Error fetching leetcode activity: ${error.message}`);
@@ -23,7 +23,7 @@ const getLeetcodeActivity = async (req, res) => {
 // Function to retrieve leetcode badges data
 const getLeetcodeBadges = async (req, res) => {
   try {
-    const badges = await Leetcode_badges.findAll();
+    const badges = await leetcode_badges.findAll();
     res.status(200).json(badges);
   } catch (error) {
     logger.error(`Error fetching leetcode badges: ${error.message}`);
@@ -34,7 +34,7 @@ const getLeetcodeBadges = async (req, res) => {
 // Function to retrieve leetcode calendar data
 const getLeetcodeCalendar = async (req, res) => {
   try {
-    const calendars = await Leetcode_calendar.findAll();
+    const calendars = await leetcode_calendar.findAll();
     res.status(200).json(calendars);
   } catch (error) {
     logger.error(`Error fetching leetcode calendar: ${error.message}`);
@@ -45,7 +45,7 @@ const getLeetcodeCalendar = async (req, res) => {
 // Function to retrieve leetcode summary data
 const getLeetcodeSummary = async (req, res) => {
   try {
-    const summaries = await Leetcode_summary.findAll();
+    const summaries = await leetcode_summary.findAll();
     res.status(200).json(summaries);
   } catch (error) {
     logger.error(`Error fetching leetcode summary: ${error.message}`);
