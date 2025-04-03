@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "1a510c8b-cd6a-43a2-916a-7e43f84a7b45",
+		"name": "Leetcode Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38754433",
+		"_collection_link": "https://pulseboard-api.postman.co/workspace/PulseBoard_Postman~5658a4a4-0bcb-4394-b029-3bfaa4867327/collection/38754433-1a510c8b-cd6a-43a2-916a-7e43f84a7b45?action=share&source=collection_link&creator=38754433"
+	},
+	"item": [
+		{
+			"name": "getActivities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/leetcode/activity",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"leetcode",
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSummary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/leetcode/summary",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"leetcode",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCalendar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/leetcode/calendar",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"leetcode",
+						"calendar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBadges",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

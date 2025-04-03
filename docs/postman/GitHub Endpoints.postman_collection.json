@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "98764302-108c-4a9b-9612-19b481fbd87a",
+		"name": "GitHub Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38754433",
+		"_collection_link": "https://pulseboard-api.postman.co/workspace/PulseBoard_Postman~5658a4a4-0bcb-4394-b029-3bfaa4867327/collection/38754433-98764302-108c-4a9b-9612-19b481fbd87a?action=share&source=collection_link&creator=38754433"
+	},
+	"item": [
+		{
+			"name": "getActivities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/github/activity",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"github",
+						"activity"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
