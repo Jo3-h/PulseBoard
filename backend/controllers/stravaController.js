@@ -8,7 +8,7 @@ const Strava_activity = require("../models/strava_activity");
 // Define controller functions
 
 // Function to retrieve strava activity data
-const getStravaActivity = async (req, res) => {
+const getStravaActivities = async (req, res) => {
   try {
     const activities = await Strava_activity.findAll();
     res.status(200).json(activities);
@@ -20,5 +20,5 @@ const getStravaActivity = async (req, res) => {
 
 // Export controller
 module.exports = {
-  getStravaActivity,
+  getStravaActivities,
 };
