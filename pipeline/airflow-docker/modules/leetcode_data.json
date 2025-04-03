@@ -54,6 +54,21 @@
     ],
     "recent_ac_submissions": [
         {
+            "event_id": "1595004511",
+            "event_type": "Submission",
+            "problem_name": "Maximum Value of an Ordered Triplet II",
+            "problem_description": "<p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>.</p>\n\n<p>Return <em><strong>the maximum value over all triplets of indices</strong></em> <code>(i, j, k)</code> <em>such that</em> <code>i &lt; j &lt; k</code><em>. </em>If all such triplets have a negative value, return <code>0</code>.</p>\n\n<p>The <strong>value of a triplet of indices</strong> <code>(i, j, k)</code> is equal to <code>(nums[i] - nums[j]) * nums[k]</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [12,6,1,2,7]\n<strong>Output:</strong> 77\n<strong>Explanation:</strong> The value of the triplet (0, 2, 4) is (nums[0] - nums[2]) * nums[4] = 77.\nIt can be shown that there are no ordered triplets of indices with a value greater than 77. \n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,10,3,4,19]\n<strong>Output:</strong> 133\n<strong>Explanation:</strong> The value of the triplet (1, 2, 4) is (nums[1] - nums[2]) * nums[4] = 133.\nIt can be shown that there are no ordered triplets of indices with a value greater than 133.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,3]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> The only ordered triplet of indices (0, 1, 2) has a negative value of (nums[0] - nums[1]) * nums[2] = -3. Hence, the answer would be 0.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>3 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>6</sup></code></li>\n</ul>\n",
+            "problem_url": "https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii/",
+            "status": "Accepted",
+            "difficulty": "Medium",
+            "timestamp": "1743639373",
+            "solution_url": "",
+            "topics": "Array",
+            "stats": "{\"totalAccepted\": \"64.4K\", \"totalSubmission\": \"123.9K\", \"totalAcceptedRaw\": 64419, \"totalSubmissionRaw\": 123868, \"acRate\": \"52.0%\"}",
+            "likes": 477,
+            "dislikes": 12
+        },
+        {
             "event_id": "1593772771",
             "event_type": "Submission",
             "problem_name": "Bitwise AND of Numbers Range",
@@ -64,8 +79,8 @@
             "timestamp": "1743555642",
             "solution_url": "",
             "topics": "Bit Manipulation",
-            "stats": "{\"totalAccepted\": \"446.1K\", \"totalSubmission\": \"938.4K\", \"totalAcceptedRaw\": 446062, \"totalSubmissionRaw\": 938368, \"acRate\": \"47.5%\"}",
-            "likes": 4121,
+            "stats": "{\"totalAccepted\": \"446.2K\", \"totalSubmission\": \"939.1K\", \"totalAcceptedRaw\": 446244, \"totalSubmissionRaw\": 939075, \"acRate\": \"47.5%\"}",
+            "likes": 4122,
             "dislikes": 309
         },
         {
@@ -79,7 +94,7 @@
             "timestamp": "1743553657",
             "solution_url": "",
             "topics": "Array, Bit Manipulation",
-            "stats": "{\"totalAccepted\": \"713.7K\", \"totalSubmission\": \"1.1M\", \"totalAcceptedRaw\": 713706, \"totalSubmissionRaw\": 1101022, \"acRate\": \"64.8%\"}",
+            "stats": "{\"totalAccepted\": \"714.1K\", \"totalSubmission\": \"1.1M\", \"totalAcceptedRaw\": 714128, \"totalSubmissionRaw\": 1101552, \"acRate\": \"64.8%\"}",
             "likes": 8248,
             "dislikes": 717
         },
@@ -94,9 +109,9 @@
             "timestamp": "1743552671",
             "solution_url": "",
             "topics": "Array",
-            "stats": "{\"totalAccepted\": \"70.1K\", \"totalSubmission\": \"134.2K\", \"totalAcceptedRaw\": 70106, \"totalSubmissionRaw\": 134172, \"acRate\": \"52.3%\"}",
-            "likes": 300,
-            "dislikes": 23
+            "stats": "{\"totalAccepted\": \"175.6K\", \"totalSubmission\": \"302.1K\", \"totalAcceptedRaw\": 175568, \"totalSubmissionRaw\": 302135, \"acRate\": \"58.1%\"}",
+            "likes": 621,
+            "dislikes": 36
         },
         {
             "event_id": "1592567694",
@@ -109,9 +124,9 @@
             "timestamp": "1743470696",
             "solution_url": "",
             "topics": "Array, Dynamic Programming",
-            "stats": "{\"totalAccepted\": \"221.2K\", \"totalSubmission\": \"366.4K\", \"totalAcceptedRaw\": 221201, \"totalSubmissionRaw\": 366396, \"acRate\": \"60.4%\"}",
-            "likes": 2814,
-            "dislikes": 81
+            "stats": "{\"totalAccepted\": \"226.4K\", \"totalSubmission\": \"374.9K\", \"totalAcceptedRaw\": 226407, \"totalSubmissionRaw\": 374888, \"acRate\": \"60.4%\"}",
+            "likes": 2837,
+            "dislikes": 82
         },
         {
             "event_id": "1591588431",
@@ -124,8 +139,8 @@
             "timestamp": "1743388737",
             "solution_url": "",
             "topics": "Array, Greedy, Sorting, Heap (Priority Queue)",
-            "stats": "{\"totalAccepted\": \"139.8K\", \"totalSubmission\": \"192.3K\", \"totalAcceptedRaw\": 139809, \"totalSubmissionRaw\": 192251, \"acRate\": \"72.7%\"}",
-            "likes": 2557,
+            "stats": "{\"totalAccepted\": \"140.6K\", \"totalSubmission\": \"193.4K\", \"totalAcceptedRaw\": 140599, \"totalSubmissionRaw\": 193407, \"acRate\": \"72.7%\"}",
+            "likes": 2566,
             "dislikes": 117
         },
         {
@@ -139,8 +154,8 @@
             "timestamp": "1743380736",
             "solution_url": "",
             "topics": "Array, Hash Table, Two Pointers, Binary Search, Sorting",
-            "stats": "{\"totalAccepted\": \"1.5M\", \"totalSubmission\": \"1.9M\", \"totalAcceptedRaw\": 1467206, \"totalSubmissionRaw\": 1927469, \"acRate\": \"76.1%\"}",
-            "likes": 6385,
+            "stats": "{\"totalAccepted\": \"1.5M\", \"totalSubmission\": \"1.9M\", \"totalAcceptedRaw\": 1468030, \"totalSubmissionRaw\": 1928442, \"acRate\": \"76.1%\"}",
+            "likes": 6387,
             "dislikes": 2319
         },
         {
@@ -154,8 +169,8 @@
             "timestamp": "1743301483",
             "solution_url": "",
             "topics": "Array, Depth-First Search, Breadth-First Search, Matrix",
-            "stats": "{\"totalAccepted\": \"710.9K\", \"totalSubmission\": \"969.2K\", \"totalAcceptedRaw\": 710891, \"totalSubmissionRaw\": 969156, \"acRate\": \"73.4%\"}",
-            "likes": 7006,
+            "stats": "{\"totalAccepted\": \"711.1K\", \"totalSubmission\": \"969.5K\", \"totalAcceptedRaw\": 711133, \"totalSubmissionRaw\": 969478, \"acRate\": \"73.4%\"}",
+            "likes": 7008,
             "dislikes": 403
         },
         {
@@ -169,7 +184,7 @@
             "timestamp": "1743300995",
             "solution_url": "",
             "topics": "Bit Manipulation",
-            "stats": "{\"totalAccepted\": \"621.4K\", \"totalSubmission\": \"818.5K\", \"totalAcceptedRaw\": 621411, \"totalSubmissionRaw\": 818545, \"acRate\": \"75.9%\"}",
+            "stats": "{\"totalAccepted\": \"621.6K\", \"totalSubmission\": \"818.8K\", \"totalAcceptedRaw\": 621583, \"totalSubmissionRaw\": 818750, \"acRate\": \"75.9%\"}",
             "likes": 3927,
             "dislikes": 224
         },
@@ -184,8 +199,8 @@
             "timestamp": "1743228411",
             "solution_url": "",
             "topics": "Database",
-            "stats": "{\"totalAccepted\": \"779.5K\", \"totalSubmission\": \"1.1M\", \"totalAcceptedRaw\": 779486, \"totalSubmissionRaw\": 1095243, \"acRate\": \"71.2%\"}",
-            "likes": 2742,
+            "stats": "{\"totalAccepted\": \"780K\", \"totalSubmission\": \"1.1M\", \"totalAcceptedRaw\": 779951, \"totalSubmissionRaw\": 1095810, \"acRate\": \"71.2%\"}",
+            "likes": 2743,
             "dislikes": 271
         },
         {
@@ -199,7 +214,7 @@
             "timestamp": "1743125656",
             "solution_url": "",
             "topics": "Array, Two Pointers, Breadth-First Search, Union Find, Sorting, Heap (Priority Queue), Matrix",
-            "stats": "{\"totalAccepted\": \"90.6K\", \"totalSubmission\": \"151.9K\", \"totalAcceptedRaw\": 90631, \"totalSubmissionRaw\": 151859, \"acRate\": \"59.7%\"}",
+            "stats": "{\"totalAccepted\": \"90.9K\", \"totalSubmission\": \"152.3K\", \"totalAcceptedRaw\": 90919, \"totalSubmissionRaw\": 152316, \"acRate\": \"59.7%\"}",
             "likes": 1030,
             "dislikes": 48
         },
@@ -214,8 +229,8 @@
             "timestamp": "1743035905",
             "solution_url": "",
             "topics": "Array, Hash Table, Sorting",
-            "stats": "{\"totalAccepted\": \"138.1K\", \"totalSubmission\": \"181.9K\", \"totalAcceptedRaw\": 138116, \"totalSubmissionRaw\": 181939, \"acRate\": \"75.9%\"}",
-            "likes": 783,
+            "stats": "{\"totalAccepted\": \"138.4K\", \"totalSubmission\": \"182.4K\", \"totalAcceptedRaw\": 138364, \"totalSubmissionRaw\": 182362, \"acRate\": \"75.9%\"}",
+            "likes": 785,
             "dislikes": 45
         },
         {
@@ -229,9 +244,9 @@
             "timestamp": "1743030866",
             "solution_url": "",
             "topics": "Array, Design, Prefix Sum",
-            "stats": "{\"totalAccepted\": \"678.8K\", \"totalSubmission\": \"1M\", \"totalAcceptedRaw\": 678836, \"totalSubmissionRaw\": 1004177, \"acRate\": \"67.6%\"}",
-            "likes": 3448,
-            "dislikes": 1954
+            "stats": "{\"totalAccepted\": \"679.4K\", \"totalSubmission\": \"1M\", \"totalAcceptedRaw\": 679403, \"totalSubmissionRaw\": 1004827, \"acRate\": \"67.6%\"}",
+            "likes": 3449,
+            "dislikes": 1955
         },
         {
             "event_id": "1587482436",
@@ -244,7 +259,7 @@
             "timestamp": "1743030441",
             "solution_url": "",
             "topics": "Math, Brainteaser, Game Theory",
-            "stats": "{\"totalAccepted\": \"439.4K\", \"totalSubmission\": \"759K\", \"totalAcceptedRaw\": 439371, \"totalSubmissionRaw\": 758952, \"acRate\": \"57.9%\"}",
+            "stats": "{\"totalAccepted\": \"439.6K\", \"totalSubmission\": \"759.2K\", \"totalAcceptedRaw\": 439563, \"totalSubmissionRaw\": 759236, \"acRate\": \"57.9%\"}",
             "likes": 1818,
             "dislikes": 2717
         },
@@ -259,8 +274,8 @@
             "timestamp": "1743028837",
             "solution_url": "",
             "topics": "Math",
-            "stats": "{\"totalAccepted\": \"618.1K\", \"totalSubmission\": \"1.5M\", \"totalAcceptedRaw\": 618082, \"totalSubmissionRaw\": 1463568, \"acRate\": \"42.2%\"}",
-            "likes": 3569,
+            "stats": "{\"totalAccepted\": \"618.4K\", \"totalSubmission\": \"1.5M\", \"totalAcceptedRaw\": 618385, \"totalSubmissionRaw\": 1464219, \"acRate\": \"42.2%\"}",
+            "likes": 3570,
             "dislikes": 1753
         },
         {
@@ -274,8 +289,8 @@
             "timestamp": "1742948951",
             "solution_url": "",
             "topics": "Array, Math, Sorting, Matrix",
-            "stats": "{\"totalAccepted\": \"135.1K\", \"totalSubmission\": \"200.3K\", \"totalAcceptedRaw\": 135149, \"totalSubmissionRaw\": 200305, \"acRate\": \"67.5%\"}",
-            "likes": 1075,
+            "stats": "{\"totalAccepted\": \"135.3K\", \"totalSubmission\": \"200.6K\", \"totalAcceptedRaw\": 135318, \"totalSubmissionRaw\": 200564, \"acRate\": \"67.5%\"}",
+            "likes": 1076,
             "dislikes": 72
         },
         {
@@ -289,8 +304,8 @@
             "timestamp": "1742943888",
             "solution_url": "",
             "topics": "Array, Binary Search, Sorting",
-            "stats": "{\"totalAccepted\": \"132.8K\", \"totalSubmission\": \"248.3K\", \"totalAcceptedRaw\": 132796, \"totalSubmissionRaw\": 248339, \"acRate\": \"53.5%\"}",
-            "likes": 2236,
+            "stats": "{\"totalAccepted\": \"132.8K\", \"totalSubmission\": \"248.4K\", \"totalAcceptedRaw\": 132841, \"totalSubmissionRaw\": 248420, \"acRate\": \"53.5%\"}",
+            "likes": 2237,
             "dislikes": 379
         },
         {
@@ -304,8 +319,8 @@
             "timestamp": "1742897381",
             "solution_url": "",
             "topics": "Array, Binary Search",
-            "stats": "{\"totalAccepted\": \"2.6M\", \"totalSubmission\": \"5.5M\", \"totalAcceptedRaw\": 2563250, \"totalSubmissionRaw\": 5533794, \"acRate\": \"46.3%\"}",
-            "likes": 21591,
+            "stats": "{\"totalAccepted\": \"2.6M\", \"totalSubmission\": \"5.5M\", \"totalAcceptedRaw\": 2565200, \"totalSubmissionRaw\": 5537073, \"acRate\": \"46.3%\"}",
+            "likes": 21594,
             "dislikes": 562
         },
         {
@@ -319,8 +334,8 @@
             "timestamp": "1742867078",
             "solution_url": "",
             "topics": "Array, Sorting",
-            "stats": "{\"totalAccepted\": \"106.4K\", \"totalSubmission\": \"153.8K\", \"totalAcceptedRaw\": 106384, \"totalSubmissionRaw\": 153788, \"acRate\": \"69.2%\"}",
-            "likes": 584,
+            "stats": "{\"totalAccepted\": \"106.5K\", \"totalSubmission\": \"154K\", \"totalAcceptedRaw\": 106548, \"totalSubmissionRaw\": 154020, \"acRate\": \"69.2%\"}",
+            "likes": 586,
             "dislikes": 34
         },
         {
@@ -334,24 +349,9 @@
             "timestamp": "1742777334",
             "solution_url": "",
             "topics": "Array, Sorting",
-            "stats": "{\"totalAccepted\": \"167.1K\", \"totalSubmission\": \"349K\", \"totalAcceptedRaw\": 167127, \"totalSubmissionRaw\": 349028, \"acRate\": \"47.9%\"}",
-            "likes": 720,
+            "stats": "{\"totalAccepted\": \"167.3K\", \"totalSubmission\": \"350K\", \"totalAcceptedRaw\": 167338, \"totalSubmissionRaw\": 349957, \"acRate\": \"47.8%\"}",
+            "likes": 721,
             "dislikes": 17
-        },
-        {
-            "event_id": "1583185618",
-            "event_type": "Submission",
-            "problem_name": "Valid Perfect Square",
-            "problem_description": "<p>Given a positive integer num, return <code>true</code> <em>if</em> <code>num</code> <em>is a perfect square or</em> <code>false</code> <em>otherwise</em>.</p>\n\n<p>A <strong>perfect square</strong> is an integer that is the square of an integer. In other words, it is the product of some integer with itself.</p>\n\n<p>You must not use any built-in library function, such as <code>sqrt</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 16\n<strong>Output:</strong> true\n<strong>Explanation:</strong> We return true because 4 * 4 = 16 and 4 is an integer.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 14\n<strong>Output:</strong> false\n<strong>Explanation:</strong> We return false because 3.742 * 3.742 = 14 and 3.742 is not an integer.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
-            "problem_url": "https://leetcode.com/problems/valid-perfect-square/",
-            "status": "Accepted",
-            "difficulty": "Easy",
-            "timestamp": "1742724013",
-            "solution_url": "",
-            "topics": "Math, Binary Search",
-            "stats": "{\"totalAccepted\": \"745K\", \"totalSubmission\": \"1.7M\", \"totalAcceptedRaw\": 744974, \"totalSubmissionRaw\": 1690105, \"acRate\": \"44.1%\"}",
-            "likes": 4418,
-            "dislikes": 320
         }
     ],
     "recent_solutions": [
@@ -574,7 +574,7 @@
                         "difficulty": "EASY"
                     },
                     {
-                        "count": 167,
+                        "count": 168,
                         "difficulty": "MEDIUM"
                     },
                     {
@@ -602,7 +602,7 @@
                         "difficulty": "EASY"
                     },
                     {
-                        "count": 1649,
+                        "count": 1648,
                         "difficulty": "MEDIUM"
                     },
                     {
@@ -617,15 +617,15 @@
                     },
                     {
                         "difficulty": "MEDIUM",
-                        "percentage": 91.98
+                        "percentage": 92.04
                     },
                     {
                         "difficulty": "HARD",
-                        "percentage": 71.92
+                        "percentage": 71.93
                     }
                 ],
-                "totalQuestionBeatsPercentage": 97.4,
-                "ranking": 304334
+                "totalQuestionBeatsPercentage": 97.5,
+                "ranking": 300239
             }
         }
     ],
@@ -637,9 +637,9 @@
                         2024,
                         2025
                     ],
-                    "streak": 31,
-                    "totalActiveDays": 98,
-                    "submissionCalendar": "{\"1735776000\": 1, \"1736208000\": 1, \"1736294400\": 2, \"1736380800\": 1, \"1736726400\": 1, \"1736899200\": 2, \"1736985600\": 1, \"1737417600\": 3, \"1737590400\": 2, \"1737676800\": 1, \"1738022400\": 24, \"1738281600\": 5, \"1738454400\": 2, \"1738540800\": 17, \"1738627200\": 11, \"1738713600\": 4, \"1738800000\": 1, \"1738886400\": 21, \"1738972800\": 2, \"1739059200\": 2, \"1739145600\": 10, \"1739232000\": 8, \"1739318400\": 18, \"1739404800\": 4, \"1739491200\": 1, \"1739836800\": 2, \"1740096000\": 1, \"1740355200\": 8, \"1740614400\": 13, \"1740960000\": 6, \"1741046400\": 22, \"1741132800\": 9, \"1741219200\": 7, \"1741305600\": 1, \"1741392000\": 3, \"1741478400\": 1, \"1741564800\": 8, \"1741651200\": 7, \"1741737600\": 3, \"1741824000\": 20, \"1741910400\": 11, \"1741996800\": 4, \"1742083200\": 22, \"1742169600\": 8, \"1742256000\": 14, \"1742342400\": 8, \"1742428800\": 4, \"1742515200\": 5, \"1742601600\": 1, \"1742688000\": 4, \"1742774400\": 1, \"1742860800\": 3, \"1742947200\": 8, \"1743033600\": 1, \"1743120000\": 2, \"1743206400\": 1, \"1743292800\": 2, \"1743379200\": 2, \"1743465600\": 4, \"1743552000\": 7, \"1728604800\": 2, \"1728691200\": 2, \"1728777600\": 6, \"1728864000\": 11, \"1728950400\": 6, \"1729036800\": 25, \"1729123200\": 6, \"1729382400\": 4, \"1729468800\": 16, \"1729555200\": 38, \"1729641600\": 16, \"1729728000\": 8, \"1729814400\": 4, \"1729987200\": 5, \"1730073600\": 3, \"1730246400\": 6, \"1730678400\": 10, \"1730764800\": 1, \"1730851200\": 6, \"1730937600\": 1, \"1731283200\": 8, \"1731369600\": 1, \"1731456000\": 1, \"1731888000\": 4, \"1732579200\": 1, \"1732752000\": 4, \"1732838400\": 2, \"1733097600\": 5, \"1733184000\": 5, \"1733356800\": 3, \"1733443200\": 6, \"1733529600\": 2, \"1734307200\": 12, \"1734393600\": 1, \"1734480000\": 2, \"1734566400\": 2, \"1734652800\": 3, \"1734739200\": 2}"
+                    "streak": 32,
+                    "totalActiveDays": 99,
+                    "submissionCalendar": "{\"1735776000\": 1, \"1736208000\": 1, \"1736294400\": 2, \"1736380800\": 1, \"1736726400\": 1, \"1736899200\": 2, \"1736985600\": 1, \"1737417600\": 3, \"1737590400\": 2, \"1737676800\": 1, \"1738022400\": 24, \"1738281600\": 5, \"1738454400\": 2, \"1738540800\": 17, \"1738627200\": 11, \"1738713600\": 4, \"1738800000\": 1, \"1738886400\": 21, \"1738972800\": 2, \"1739059200\": 2, \"1739145600\": 10, \"1739232000\": 8, \"1739318400\": 18, \"1739404800\": 4, \"1739491200\": 1, \"1739836800\": 2, \"1740096000\": 1, \"1740355200\": 8, \"1740614400\": 13, \"1740960000\": 6, \"1741046400\": 22, \"1741132800\": 9, \"1741219200\": 7, \"1741305600\": 1, \"1741392000\": 3, \"1741478400\": 1, \"1741564800\": 8, \"1741651200\": 7, \"1741737600\": 3, \"1741824000\": 20, \"1741910400\": 11, \"1741996800\": 4, \"1742083200\": 22, \"1742169600\": 8, \"1742256000\": 14, \"1742342400\": 8, \"1742428800\": 4, \"1742515200\": 5, \"1742601600\": 1, \"1742688000\": 4, \"1742774400\": 1, \"1742860800\": 3, \"1742947200\": 8, \"1743033600\": 1, \"1743120000\": 2, \"1743206400\": 1, \"1743292800\": 2, \"1743379200\": 2, \"1743465600\": 4, \"1743552000\": 7, \"1743638400\": 1, \"1728604800\": 2, \"1728691200\": 2, \"1728777600\": 6, \"1728864000\": 11, \"1728950400\": 6, \"1729036800\": 25, \"1729123200\": 6, \"1729382400\": 4, \"1729468800\": 16, \"1729555200\": 38, \"1729641600\": 16, \"1729728000\": 8, \"1729814400\": 4, \"1729987200\": 5, \"1730073600\": 3, \"1730246400\": 6, \"1730678400\": 10, \"1730764800\": 1, \"1730851200\": 6, \"1730937600\": 1, \"1731283200\": 8, \"1731369600\": 1, \"1731456000\": 1, \"1731888000\": 4, \"1732579200\": 1, \"1732752000\": 4, \"1732838400\": 2, \"1733097600\": 5, \"1733184000\": 5, \"1733356800\": 3, \"1733443200\": 6, \"1733529600\": 2, \"1734307200\": 12, \"1734393600\": 1, \"1734480000\": 2, \"1734566400\": 2, \"1734652800\": 3, \"1734739200\": 2}"
                 }
             }
         }

@@ -38,7 +38,6 @@ def transform_strava_data():
             'comment_count': activity['comment_count'],
             'achievement_count': activity['achievement_count'],
             'max_speed': activity['max_speed'],
-            'calories': activity['calories'],
             'commute': activity['commute'],
         })
 

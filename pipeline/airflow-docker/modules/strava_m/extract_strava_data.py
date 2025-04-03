@@ -164,7 +164,7 @@ class strava_api():
         url = f'{self.BASE_URL}/athlete/activities'
         params = {
             'page': 1,
-            'per_page': 10
+            'per_page': 50,
         }
         headers = {
             "Authorization" : f"Bearer {self.access_token}"

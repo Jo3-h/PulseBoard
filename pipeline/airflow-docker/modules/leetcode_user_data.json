@@ -1,19 +1,19 @@
 [
     {
         "username": "Jo3-h",
-        "date": "2025-04-02",
+        "date": "2025-04-03",
         "accepted_easy": 143,
-        "accepted_medium": 167,
+        "accepted_medium": 168,
         "accepted_hard": 15,
         "failed_easy": 2,
         "failed_medium": 3,
         "failed_hard": 0,
         "untouched_easy": 725,
-        "untouched_medium": 1649,
+        "untouched_medium": 1648,
         "untouched_hard": 802,
         "beats_easy": 95.11,
-        "beats_medium": 91.98,
-        "beats_hard": 71.92,
-        "ranking": 304334
+        "beats_medium": 92.04,
+        "beats_hard": 71.93,
+        "ranking": 300239
     }
 ]

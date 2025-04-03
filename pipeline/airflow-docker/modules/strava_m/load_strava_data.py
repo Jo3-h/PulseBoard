@@ -30,8 +30,8 @@ def load_strava_data():
         for record in data:
             cursor.execute(
                 """
-                INSERT INTO strava_activity (activity_id, activity_type, name, description, distance_ms, duration_sec, elapsed_sec, start_time, average_pace, elevation_gain, map_polyline, start_lat, start_lon, end_lat, end_lon, kudos_count, is_private, calories, max_speed, achievement_count, comment_count, commute)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO strava_activity (activity_id, activity_type, name, description, distance_ms, duration_sec, elapsed_sec, start_time, average_pace, elevation_gain, map_polyline, start_lat, start_lon, end_lat, end_lon, kudos_count, is_private, max_speed, achievement_count, comment_count, commute)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (activity_id) 
                 DO UPDATE SET 
                     activity_id = EXCLUDED.activity_id,
@@ -48,16 +48,15 @@ def load_strava_data():
                     start_lat = EXCLUDED.start_lat,
                     start_lon = EXCLUDED.start_lon,
                     end_lat = EXCLUDED.end_lat,
-                    end_lon = EXCLUDED.end_lon;
+                    end_lon = EXCLUDED.end_lon,
                     kudos_count = EXCLUDED.kudos_count,
                     is_private = EXCLUDED.is_private,
-                    calories = EXCLUDED.calories,
                     max_speed = EXCLUDED.max_speed,
                     achievement_count = EXCLUDED.achievement_count,
                     comment_count = EXCLUDED.comment_count,
                     commute = EXCLUDED.commute;
 
-                """,(record['activity_id'], record['activity_type'], record['name'], record['description'], record['distance_ms'], record['duration_sec'], record['elapsed_sec'], record['start_time'], record['average_pace'], record['elevation_gain'], record['map_polyline'], record['start_lat'], record['start_lon'], record['end_lat'], record['end_lon'], record['kudos_count'], record['is_private'], record['calories'], record['max_speed'], record['achievement_count'], record['comment_count'], record['commute'])
+                """,(record['activity_id'], record['activity_type'], record['name'], record['description'], record['distance_ms'], record['duration_sec'], record['elapsed_sec'], record['start_time'], record['average_pace'], record['elevation_gain'], record['map_polyline'], record['start_lat'], record['start_lon'], record['end_lat'], record['end_lon'], record['kudos_count'], record['is_private'], record['max_speed'], record['achievement_count'], record['comment_count'], record['commute'])
             )
 
         connection.commit()
