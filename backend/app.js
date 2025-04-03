@@ -20,10 +20,10 @@ app.use((err, req, res, next) => {
 });
 
 // Import Routes
-const githubRoutes = require("routes/githubRoutes");
-const leetcodeRoutes = require("routes/leetcodeRoutes");
-const stravaRoutes = require("routes/stravaRoutes");
-const resumeRoutes = require("routes/resumeRoutes");
+const githubRoutes = require("./routes/githubRoutes");
+const leetcodeRoutes = require("./routes/leetcodeRoutes");
+const stravaRoutes = require("./routes/stravaRoutes");
+const resumeRoutes = require("./routes/resumeRoutes");
 
 // Use Routes
 app.use("/api/github", githubRoutes);
