@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Custom components with tailwind properties */
+@layer components {
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
