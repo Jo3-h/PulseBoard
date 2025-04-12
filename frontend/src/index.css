@@ -5,27 +5,30 @@
   --color-m-display: #548fd6;
   --color-d-display: #3976bf;
   --color-highlight: #ff2b2b;
+  --color-offwhite: rgb(240 240 240);
   --font-landing: "Druk";
   --font-label: "B-Mono";
 }
 
 @font-face {
   font-family: "Druk";
-  src: url("../public/fonts/DrukWide-Super-Trial.otf") format("opentype");
+  src: url("/fonts/DrukWide-Super-Trial.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "B-Mono";
-  src: url("../public/fonts/IBMPlexMono-Regular.ttf") format("truetype");
+  src: url("/fonts/IBMPlexMono-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @layer components {
   .openContent {
-    @apply max-h-full lg:max-w-[calc(100vw-400px)];
+    @apply max-h-full h-[calc(100vw*1.4)]
+    md:h-auto 
+    lg:max-w-[calc(100vw-400px)] 2xl:max-w-[calc(100vw-500px)];
   }
 
   /* Custom utility classes for landing page */
@@ -46,10 +49,27 @@
   }
 
   .landing-image-container {
-    @apply -translate-x-6/10 w-full h-[150%] z-0 top-10 left-0 absolute;
+    @apply w-full h-[150%] z-0 top-10 left-0 absolute
+            -translate-x-6/10
+            md:-translate-y-15
+            lg:-translate-y-0 lg:-translate-x-30
+            xl:-translate-y-0 xl:-translate-x-40
+            2xl:-translate-y-20 2xl:-translate-x-45;
   }
 
   .title-text {
-    @apply font-landing text-[calc(100vw/12)] lg:text-[calc(calc(100vw-400px)/12)] uppercase leading-none;
+    @apply font-landing text-[calc(100vw/8)] px-4 uppercase leading-none
+            md:text-[calc(100vw/11)] md:px-10
+            lg:text-[calc(calc(100vw-400px)/11)] lg:px-6;
+  }
+
+  .content-text {
+    @apply font-label text-white text-[calc(10vw*0.5)] px-4
+    md:text-[calc(10vw*0.3)] md:px-10
+    lg:text-[calc(1vw*1.7)] lg:px-6;
+  }
+
+  .activity-card {
+    @apply w-full h-auto min-h-10 rounded-lg bg-offwhite my-2 flex items-center justify-center;
   }
 }

@@ -7,7 +7,7 @@ const router = express.Router();
 const { getStravaActivities } = require("../controllers/stravaController");
 
 // Define endpoints
-router.get("/activities", getStravaActivities);
+router.get("/activity", getStravaActivities);
 
 // Export router
 module.exports = router;

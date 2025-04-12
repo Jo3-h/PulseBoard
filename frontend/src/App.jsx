@@ -40,9 +40,10 @@ function App() {
   return (
     <>
       {/* landing page element */}
+      <nav className="w-full flex flex-col bg-d-display h-10 lg:hidden"></nav>
       <div className="relative flex w-screen min-w-0">
         {/* landing page graphics */}
-        <div className="flex flex-col w-full openContent">
+        <div className="flex flex-col w-screen openContent h-auto">
           <div>
             <div className="w-full flex bg-m-display openContent">
               <div className="w-screen openContent h-screen flex flex-col overflow-hidden">
@@ -54,7 +55,7 @@ function App() {
                       </div>
                       <div className="landing-text-node bg-l-display">
                         <span className="landing-text">U</span>
-                        <div className="landing-image-container -translate-x-6/10 -translate-y-8">
+                        <div className="landing-image-container lg:-translate-x-40">
                           <img
                             className="landing-image-solo"
                             loading="lazy"
@@ -75,7 +76,7 @@ function App() {
                       </div>
                       <div className="landing-text-node bg-l-display">
                         <span className="landing-text">-</span>
-                        <div className="landing-image-container -translate-y-6 -translate-x-4/10">
+                        <div className="landing-image-container">
                           <img
                             className="landing-image-solo"
                             loading="lazy"
@@ -90,7 +91,7 @@ function App() {
                       </div>
                       <div className="landing-text-node bg-l-display">
                         <span className="landing-text">R</span>
-                        <div className="landing-image-container -translate-y-12">
+                        <div className="landing-image-container">
                           <img
                             className="landing-image-solo"
                             loading="lazy"
@@ -108,21 +109,23 @@ function App() {
             </div>
           </div>
           <div>
-            <div className="w-full flex bg-m-display openContent">
+            <div className="w-full flex bg-m-display openContent h-auto">
               <div className="w-screen h-auto openContent flex flex-col overflow-hidden">
                 <div className="w-full flex-1 flex flex-col min-h-0">
-                  <div className="w-full pt16 lg:py-16 lg:p-8 bg-m-display text-white flex- flex-col items-center lg:items-start gap-4 mb-8 lg:mb-0">
-                    <h1 className="title-text text-center lg:text-left">
+                  <div className="w-full pt-6 lg:py-16 lg:p-8 bg-m-display text-white flex- flex-col lg:items-start gap-4 mb-8 lg:mb-0 text-left">
+                    <h1 className="title-text">
                       <div>
                         PULSE
                         <br />
                         BOARD
                       </div>
                     </h1>
-                    <div className="text-[13px] font-label text-left">
-                      <span className="pr-3">by</span>
-                      <span className="uppercase pr-5">joe hosking</span>
-                      <span className="text-highlight text-[11px]">
+                    <div className="content-text">
+                      <span className="pr-1 md:pr-3 lg:pr-5">by</span>
+                      <span className="uppercase pr-1 md:pr-3 lg:pr-5">
+                        joe hosking
+                      </span>
+                      <span className="text-highlight text-[8px] md:text-[12px] lg:text-[16px] 2xl:text-[20px]">
                         - A React & Tailwindcss Frontend
                       </span>
                     </div>
@@ -136,9 +139,9 @@ function App() {
           </div>
         </div>
         {/* landing page nav bar */}
-        <nav className="sticky max-h-screen w-[400px] hidden top-0 right-0 bg-d-display lg:block">
+        <nav className="sticky max-h-screen w-[400px] 2xl:w-[500px] hidden top-0 -right-100 bg-d-display lg:block">
           <div className="w-full h-15 flex items-center justify-center font-label text-white">
-            <span className="w-full h-auto text-left pl-[30px] ">
+            <span className="w-full h-auto text-left pl-[30px] 2xl:text-[calc(10vw*0.11)] 2xl:pt-4">
               Table of Contents
             </span>
           </div>
@@ -157,6 +160,8 @@ function App() {
           </div>
         </nav>
       </div>
+      {/* upto lg breakpoint nav bar */}
+
       {/* main page content */}
       {navItems.find((item) => item.name === activeContent)?.content}
 
