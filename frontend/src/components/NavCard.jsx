@@ -14,7 +14,7 @@ export default function NavCard({
         onClick={onClick}
       >
         {active && (
-          <div className="absolute left-0 top-1/2 translate-x-85 -translate-y-1/2 w-0 h-0 border-y-[40px] border-y-transparent border-r-[50px] border-r-l-display"></div>
+          <div className="absolute left-0 top-1/2 translate-x-85 -translate-y-1/2 w-0 h-0 border-y-[40px] border-y-transparent border-r-[50px] border-r-l-display overflow-hidden"></div>
         )}
         <span className="font-label text-highlight font-bold text-left">
           0{index + 1}
