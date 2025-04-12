@@ -22,3 +22,7 @@ Connected Newsletters
 
 #### Strava --> https://www.strava.com/dashboard
 Data Extraction for Strava software managed through API access to platform offered API endpoints. 
+
+
+# Landing Page
+![image](https://github.com/user-attachments/assets/00f3596a-bfde-40dc-97bc-279418b043e2)
