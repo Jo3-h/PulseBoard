@@ -59,7 +59,7 @@ function App() {
                           <img
                             className="landing-image-solo"
                             loading="lazy"
-                            src="../public/images/joe-1.png"
+                            src="/images/joe-1.png"
                           />
                         </div>
                       </div>
@@ -80,7 +80,7 @@ function App() {
                           <img
                             className="landing-image-solo"
                             loading="lazy"
-                            src="../public/images/joe-2.png"
+                            src="/images/joe-2.png"
                           />
                         </div>
                       </div>
@@ -95,7 +95,7 @@ function App() {
                           <img
                             className="landing-image-solo"
                             loading="lazy"
-                            src="../public/images/joe-mon.png"
+                            src="/images/joe-mon.png"
                           />
                         </div>
                       </div>

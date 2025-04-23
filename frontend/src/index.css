@@ -5,7 +5,8 @@
   --color-m-display: #548fd6;
   --color-d-display: #3976bf;
   --color-highlight: #ff2b2b;
-  --color-offwhite: rgb(240 240 240);
+  --color-offwhite: #f5f5f5;
+  --color-light_gray: #c4c4c4;
   --font-landing: "Druk";
   --font-label: "B-Mono";
 }
@@ -70,6 +71,6 @@
   }
 
   .activity-card {
-    @apply w-full h-auto min-h-10 rounded-lg bg-offwhite my-2 flex items-center justify-center;
+    @apply w-full h-auto min-h-10 rounded-xl bg-offwhite my-2 flex;
   }
 }
