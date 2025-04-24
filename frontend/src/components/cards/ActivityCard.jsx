@@ -51,23 +51,43 @@ import LeetcodeContent from "./content/leetcodeContent.jsx";
 import { useState } from "react";
 import { useEffect } from "react";
 
-function renderPlatformContent(item) {
+function renderPlatformContent(item, tidbit) {
   if (item.type === "github") {
-    return <GithubContent key={item.data.event_id} data={item.data} />;
+    return (
+      <GithubContent
+        key={item.data.event_id}
+        data={item.data}
+        tidbit={tidbit}
+      />
+    );
   }
 
   if (item.type === "strava") {
-    return <StravaContent key={item.data.activity_id} data={item.data} />;
+    return (
+      <StravaContent
+        key={item.data.activity_id}
+        data={item.data}
+        tidbit={tidbit}
+      />
+    );
   }
 
   if (item.type === "leetcode") {
-    return <LeetcodeContent key={item.data.event_id} data={item.data} />;
+    return (
+      <LeetcodeContent
+        key={item.data.event_id}
+        data={item.data}
+        tidbit={tidbit}
+      />
+    );
   }
 
   return null;
 }
 
 function parseActivityItem(item) {
+  console.log("ActivityCard item: ", item);
+
   if (!item) {
     return {
       platform: "n/a",
@@ -155,7 +175,37 @@ export default function ActivityCard({ item }) {
 
         {/* Body section */}
         <div className="w-full h-auto min-h-30 bg-offwhite rounded-b-xl flex flex-col md:flex-row p-2">
-          <div className="h-40 w-full md:max-w-2/5 min-w-[220px] px-5 py-[15px] flex flex-col items-center">
+          {/* Left side: icon and polka dot pattern */}
+          <div className="h-auto w-full md:max-w-2/5 min-w-[220px] px-5 py-[15px] flex flex-col items-center">
+            <div className="h-[130px] w-[180px] overflow-hidden relative">
+              <div
+                className={`absolute w-full bg-white h-[100px] border-x border-t bottom-0 z-1 ${
+                  expanded ? "" : "border-b"
+                } transition-all duration-500`}
+              ></div>
+              <div
+                className="absolute w-full h-[100px] bottom-0 z-10 pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-30"
+                style={{
+                  background:
+                    "radial-gradient(circle at center, rgba(84, 143, 214, 1), rgba(84, 143, 214, 0))",
+                }}
+              />
+              <img
+                src={icon}
+                className="absolute top-0 -translate-x-1/2 translate-y-0 left-1/2 z-20"
+                loading="lazy"
+              />
+            </div>
+
+            <div
+              className={`flex flex-col items-center justify-center ${
+                expanded ? "" : "hidden"
+              }`}
+            >
+              {renderPlatformContent(item, true)}
+            </div>
+
+            {/**
             <div
               className={`relative overflow-hidden ${
                 expanded ? "h-[180px]" : "h-[130px]"
@@ -172,15 +222,20 @@ export default function ActivityCard({ item }) {
                 <PolkaDotPattern />
               </div>
             </div>
+            <div className="w-full h-20 bg-green-50 relative bottom-0 translate-y-full">
+              hi
+            </div>
+             */}
           </div>
+
           <div
             className={`${
               expanded ? "max-h-400" : "max-h-20 md:max-h-40"
-            } w-full h-auto bg-blue-300 overflow-hidden relative transition-all duration-500`}
+            } w-full h-auto  overflow-hidden relative transition-all duration-500`}
           >
             <div className="relative w-full h-full overflow-hidden z-0">
               {/** Platform specific content */}
-              {renderPlatformContent(item)}
+              {renderPlatformContent(item, false)}
             </div>
             {!expanded && (
               <div className="pointer-events-none absolute bottom-0 left-0 w-full h-[80px] bg-gradient-to-b from-transparent to-offwhite z-20" />
