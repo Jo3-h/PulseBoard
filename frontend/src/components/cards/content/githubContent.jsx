@@ -31,7 +31,7 @@ export default function GithubContent({ data, tidbit }) {
 
   return (
     <>
-      <div className="w-auto h-auto flex flex-col mt-2">
+      <div className="w-full h-full flex flex-col mt-2 mb-5">
         <div className="flex flex-row w-full h-auto items-center">
           <div className="text-sm font-bold">{data.repo_name}</div>
           <div className="bg-light_gray h-5 w-20 ml-3 flex items-center justify-center text-sm rounded-xl font-bold text-white">

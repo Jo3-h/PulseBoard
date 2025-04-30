@@ -165,12 +165,14 @@ export default function ActivityCard({ item }) {
         onClick={() => toggleExpanded()}
       >
         {/* Header section */}
-        <div className="w-full h-10 bg-light_gray rounded-t-xl flex flex-row items-center">
+        <div className="w-full h-10 bg-d-display rounded-t-xl flex flex-row items-center">
           <div className="w-4/7 flex justify-start px-5">
-            <span className="text-sm text-black font-bold">{platform}</span>
-            <span className="text-sm pl-2">{type}</span>
+            <span className="text-sm text-white font-bold">{platform}</span>
+            <span className="text-sm text-white pl-2">{type}</span>
           </div>
-          <div className="w-3/7 flex justify-end px-5 text-xs">{date}</div>
+          <div className="w-3/7 flex text-white justify-end px-5 text-xs">
+            {date}
+          </div>
         </div>
 
         {/* Body section */}

@@ -9,10 +9,9 @@ export default function NavCard({
   return (
     <>
       <div
-        className="w-full flex flex-col group text-white justify-between pt-2 relative cursor-pointer
+        className={`w-full h-1/${cardCount} flex flex-col group text-white justify-between pt-2 relative cursor-pointer
          hover:text-l-display transition-all duration-300 ease-in-out
-        "
-        style={{ height: `calc(calc(100%-60px)/${cardCount})` }}
+        `}
         onClick={onClick}
       >
         <span className="font-label text-highlight font-bold text-left">
