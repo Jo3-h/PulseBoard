@@ -4,23 +4,45 @@ BEGIN;
 
 ---------- RESUME TABLES
 
+DROP TABLE public.experience CASCADE;
 CREATE TABLE IF NOT EXISTS public.experience
 (
-	id serial NOT NULL,
-	
-	PRIMARY KEY (id)
+	id serial PRIMARY KEY,
+	company_name VARCHAR(50),
+	job_title VARCHAR(50),
+	location VARCHAR(50),
+	start_date DATE NOT NULL,
+	end_date DATE,
+	current_position BOOLEAN DEFAULT FALSE,
+	description TEXT
 );
 
+DROP TABLE public.education CASCADE;
 CREATE TABLE IF NOT EXISTS public.education
 (
-	id serial NOT NULL,
-	PRIMARY KEY (id)
+	id serial PRIMARY KEY,
+	institution_name VARCHAR(50),
+	qualification VARCHAR(50),
+	field_of_study VARCHAR(50),
+	start_date DATE NOT NULL,
+	end_date DATE,
+	currently_studying BOOLEAN DEFAULT FALSE,
+	location VARCHAR(50),
+	description TEXT
 );
 
+DROP TABLE public.projects CASCADE;
 CREATE TABLE IF NOT EXISTS public.projects
 (
-	id serial NOT NULL,
-	PRIMARY KEY (id)
+	id serial PRIMARY KEY,
+	project_name VARCHAR(255),
+	project_url VARCHAR(512),
+	start_date DATE, 
+	end_date DATE,
+	tech_stack TEXT,
+	description TEXT,
+	github_url VARCHAR(512),
+	image_url VARCHAR(512)
 );
 
 CREATE TABLE IF NOT EXISTS public.references
