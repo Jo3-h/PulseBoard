@@ -24,9 +24,11 @@ const githubRoutes = require("./routes/githubRoutes");
 const leetcodeRoutes = require("./routes/leetcodeRoutes");
 const stravaRoutes = require("./routes/stravaRoutes");
 const resumeRoutes = require("./routes/resumeRoutes");
+const eventRoutes = require("./routes/eventRoutes");
 
 // Use Routes
 app.use("/api/github", githubRoutes);
+app.use("/api/event", eventRoutes);
 app.use("/api/leetcode", leetcodeRoutes);
 app.use("/api/strava", stravaRoutes);
 app.use("/api/resume", resumeRoutes);
