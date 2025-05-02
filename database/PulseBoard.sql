@@ -39,7 +39,9 @@ CREATE TABLE IF NOT EXISTS public.projects
 	project_url VARCHAR(512),
 	start_date DATE, 
 	end_date DATE,
-	tech_stack TEXT,
+	frontend_tech_stack TEXT,
+	backend_tech_stack TEXT,
+	database_tech_stack TEXT,
 	description TEXT,
 	github_url VARCHAR(512),
 	image_url VARCHAR(512)
