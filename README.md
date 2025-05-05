@@ -26,3 +26,5 @@ Data Extraction for Strava software managed through API access to platform offer
 
 # Landing Page
 ![image](https://github.com/user-attachments/assets/00f3596a-bfde-40dc-97bc-279418b043e2)
+
+![Screenshot 2025-05-04 at 11 04 23 am](https://github.com/user-attachments/assets/47fee10b-2216-4b6d-aca9-37787ae13000)
