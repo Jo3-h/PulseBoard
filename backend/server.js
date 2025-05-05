@@ -32,7 +32,7 @@ try {
     console.log(`PulseBoard HTTPs API Server running on port ${PORT}`);
   });
 } catch (error) {
-  console.warn("\x1b[31m%s\x1b[0m", "Failed to read SSL certificate");
+  console.warn("\x1b[31m%s\x1b[0m", "Failed to read SSL certificate", error);
   app.listen(PORT, () => {
     console.log(`PulseBoard HTTP API Server running on port ${PORT}`);
   });
