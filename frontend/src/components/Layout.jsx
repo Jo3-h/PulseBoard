@@ -190,7 +190,7 @@ export default function Layout({ children }) {
               Table of Contents
             </span>
           </div>
-          <div className="h-[calc(100%-60px)] w-full px-[30px] flex flex-col pb-[20px]">
+          <div className="h-[calc(100%-60px)] w-full px-[30px] flex flex-col pb-[20px] overflow-x-auto">
             {navItems.map((item) => (
               <Link
                 key={item.name}

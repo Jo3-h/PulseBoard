@@ -19,7 +19,7 @@ export default function Footer() {
             <Github size={24} /> Github
           </a>
           <a
-            href="https://github.com/Jo3-h/PulseBoard"
+            href="https://www.linkedin.com/in/joe-hosking-34b655269/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white font-bold hover:text-gray-300 flex flex-row items-center justify-center gap-x-2"

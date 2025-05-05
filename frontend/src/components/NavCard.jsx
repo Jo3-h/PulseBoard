@@ -8,7 +8,7 @@ export default function NavCard({
   return (
     <>
       <div
-        className={`w-full relative aspect-5/2 mb-4 p-6 rounded-2xl bg-m-display group hover:bg-l-display transition-all duration-300 ease-in-out flex flex-col items-center
+        className={`w-full relative aspect-10/3 max-h-180 mb-4 p-6 rounded-2xl bg-m-display group hover:bg-l-display transition-all duration-300 ease-in-out flex flex-col items-center
           ${active ? "text-d-display" : "hover:text-d-display text-white"}
           `}
       >
@@ -27,7 +27,7 @@ export default function NavCard({
             `}
           ></div>
         </div>
-        <div className="font-label text-left">{description}</div>
+        <div className="font-label text-left text-xs">{description}</div>
         <div
           className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 ${
             active ? "bg-white" : "bg-l-display group-hover:bg-white"
