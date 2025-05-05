@@ -78,7 +78,7 @@ export default function Layout({ children }) {
             <Link
               key={index}
               to={`/${item.name.toLowerCase()}`}
-              className="w-full h-8 my-1 bg-m-display rounded-2xl flex items-center justify-center text-white font-extrabold tracking-widest"
+              className="w-full h-12 my-1 bg-m-display rounded-2xl flex items-center justify-center text-white font-extrabold tracking-[6px]"
             >
               {item.name}
             </Link>
