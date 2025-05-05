@@ -18,11 +18,12 @@ def extract_github_data():
     }
 
     # Make the request
-    response = requests.get(f'{BASE_URL}/user/repos', headers=HEADERS)
+    response = requests.get(f'{BASE_URL}user/repos', headers=HEADERS)
 
     # Parse the response JSON
     repos = response.json()
 
+    
     repositories = []
     for repo in repos:
         repositories.append({
@@ -36,7 +37,7 @@ def extract_github_data():
     data = []
     for repo in repositories:
         
-        response = requests.get(f'{BASE_URL}/repos/{repo["owner"]}/{repo["repo_name"]}/commits', headers=HEADERS)
+        response = requests.get(f'{BASE_URL}repos/{repo["owner"]}/{repo["repo_name"]}/commits', headers=HEADERS)
         commits = response.json()
 
         for commit in commits:

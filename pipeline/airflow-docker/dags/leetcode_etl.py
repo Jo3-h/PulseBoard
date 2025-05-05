@@ -3,17 +3,24 @@
 ''' Importing necessary modules and libraries '''
 import sys 
 import os
+from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 from airflow.utils.dates import timedelta
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'modules'))
+
+# Now import your functions
+from leetcode_m import extract_leetcode_data, transform_leetcode_data, load_leetcode_data
+
 
 ''' Defining the default arguments for this DAG '''
 default_args = {
     'owner': 'PulseBoard Team',
     'retries': 10,
     'retry_delay': timedelta(minutes=2),
-    'start_date': days_ago(1),
+    'start_date': datetime(2025, 3, 25),
 }
 
 ''' Defining the DAG '''
@@ -21,7 +28,7 @@ with DAG(
     'leetcode_etl',
     default_args=default_args,
     description='ETL process for Leetcode data using Airflow',
-    schedule_interval=timedelta(minutes=1),
+    schedule_interval=timedelta(minutes=60),
     catchup=False,
     tags=['leetcode', 'etl'],
 

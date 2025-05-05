@@ -10,9 +10,9 @@ from strava_m import *
 def main():
 
     tests = {
-        'github':False,
-        'leetcode':False,
-        'strava':True,
+        'github':True,
+        'leetcode':True,
+        'strava':False,
     }
 
     print('---> Testing pipeline elements <---\n')

@@ -83,7 +83,7 @@ def get_strava_tokens():
         return access_token, refresh_token
     
     # else request tokens from the user
-    token_url = f'http://www.strava.com/oauth/authorize?client_id={os.getenv('STRAVA_CLIENT_ID')}&response_type=code&redirect_uri={os.getenv('STRAVA_REDIRECT_URI')}&approval_prompt=force&scope=read,profile:read_all,activity:read_all'
+    token_url = f"http://www.strava.com/oauth/authorize?client_id={os.getenv('STRAVA_CLIENT_ID')}&response_type=code&redirect_uri={os.getenv('STRAVA_REDIRECT_URI')}&approval_prompt=force&scope=read,profile:read_all,activity:read_all"
 
     # run the server in a separate thread to accept the authorization code
     server_thread = threading.Thread(target=run_server)

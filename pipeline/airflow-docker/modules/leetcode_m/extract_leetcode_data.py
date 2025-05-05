@@ -656,7 +656,7 @@ class leetcode_api:
                 'timestamp': solution['createdAt'],
                 'solution_name': solution['title'],
                 'solution_content': solution_data['content'],
-                'solution_url': f'{self.URL}problems/{solution["questionSlug"]}/{solution['topicId']}/{solution['slug']}',
+                'solution_url': f'{self.URL}problems/{solution["questionSlug"]}/{solution["topicId"]}/{solution["slug"]}',
                 'topics': solution_data['topics'],
                 'hits': solution['hitCount'],
                 'likes':0,

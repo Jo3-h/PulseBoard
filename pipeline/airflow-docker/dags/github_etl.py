@@ -7,6 +7,10 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'modules'))
+from github_m import extract_github_data, transform_github_data, load_github_data
+
+
 ''' Defining the default arguments for this DAG '''
 default_args = {
     'owner': 'PulseBoard Team',
@@ -20,7 +24,7 @@ with DAG(
     'github_etl',
     default_args=default_args,
     description='ETL process for GitHub data using Airflow',
-    schedule_interval=timedelta(minutes=1),
+    schedule_interval=timedelta(minutes=60),
     catchup=False,
     tags=['github', 'etl'],
 
