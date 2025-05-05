@@ -22,7 +22,6 @@ function initModels(sequelize) {
   var references = _references(sequelize, DataTypes);
   var strava_activity = _strava_activity(sequelize, DataTypes);
 
-
   return {
     education,
     experience,

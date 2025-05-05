@@ -15,6 +15,7 @@ const auto = new SequelizeAuto(
         rejectUnauthorized: false,
       },
     },
+    tables: ["projects"], // tables to import
   }
 );
 

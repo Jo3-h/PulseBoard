@@ -51,6 +51,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: 0
+    },
+    display_image: {
+      type: DataTypes.STRING(512),
+      allowNull: true
     }
   }, {
     sequelize,
