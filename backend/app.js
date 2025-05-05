@@ -12,7 +12,12 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://pulseboardapp.com", // Allow requests from this domain
+    origin: [
+      "http://pulseboardapp.com",
+      "http://www.pulseboardapp.com",
+      "http://localhost:3000",
+      "http://127.0.0.1:3000",
+    ], // Allow requests from this domain
   })
 );
 app.use(
