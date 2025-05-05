@@ -9,11 +9,7 @@ export default function useEventHeatmapData() {
   useEffect(() => {
     async function fetchEvents() {
       try {
-        const eventsResponse = await fetch(
-          `https://${
-            import.meta.env.VITE_BACKEND_HOST
-          }/api/event/event-calendar`
-        );
+        const eventsResponse = await fetch(`/api/event/event-calendar`);
         if (!eventsResponse.ok) {
           throw new Error("Failed to fetch events");
         }

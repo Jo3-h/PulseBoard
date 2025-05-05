@@ -6,9 +6,7 @@ export default function useFetchData({ endpoint }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://${import.meta.env.VITE_BACKEND_HOST}/api/${endpoint}`
-        );
+        const response = await fetch(`/api/${endpoint}`);
         const projectData = await response.json();
 
         setContent(projectData);

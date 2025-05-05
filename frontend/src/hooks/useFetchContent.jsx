@@ -7,9 +7,7 @@ export default function useFetchContent() {
     const fetchData = async () => {
       try {
         // Fetch Strava data
-        const stravaResponse = await fetch(
-          `https://${import.meta.env.VITE_BACKEND_HOST}/api/strava/activity`
-        );
+        const stravaResponse = await fetch(`/api/strava/activity`);
         const stravaData = await stravaResponse.json();
         const transStravaData = stravaData.map((activity) => ({
           date: activity.start_time,
@@ -18,9 +16,7 @@ export default function useFetchContent() {
         }));
 
         // Fetch LeetCode data
-        const leetcodeResponse = await fetch(
-          `https://${import.meta.env.VITE_BACKEND_HOST}/api/leetcode/activity`
-        );
+        const leetcodeResponse = await fetch(`/api/leetcode/activity`);
         const leetcodeData = await leetcodeResponse.json();
         const transLeetcodeData = leetcodeData.map((activity) => ({
           date: activity.created_at,
@@ -29,9 +25,7 @@ export default function useFetchContent() {
         }));
 
         // Fetch GitHub data
-        const githubResponse = await fetch(
-          `https://${import.meta.env.VITE_BACKEND_HOST}/api/github/activity`
-        );
+        const githubResponse = await fetch(`/api/github/activity`);
         const githubData = await githubResponse.json();
         const transGithubData = githubData.map((activity) => ({
           date: activity.created_at,
