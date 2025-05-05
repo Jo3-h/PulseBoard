@@ -77,7 +77,10 @@ export default function Heatmap() {
         </div>
         <div className="flex justify-end text-xs md:text-sm">New</div>
       </div>
-      <div className="w-full h-full overflow-x-auto" ref={gridRef}>
+      <div
+        className="w-full h-full overflow-x-auto overflow-y-hidden"
+        ref={gridRef}
+      >
         <div
           className="w-max grid gap-1"
           style={{

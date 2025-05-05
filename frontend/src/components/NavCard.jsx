@@ -3,27 +3,39 @@ export default function NavCard({
   index,
   cardCount,
   active,
-  onClick,
   description,
 }) {
   return (
     <>
       <div
-        className={`w-full h-1/${cardCount} flex flex-col group text-white justify-between pt-2 relative cursor-pointer
-         hover:text-l-display transition-all duration-300 ease-in-out
-        `}
-        onClick={onClick}
+        className={`w-full relative aspect-5/2 mb-4 p-6 rounded-2xl bg-m-display group hover:bg-l-display transition-all duration-300 ease-in-out flex flex-col items-center
+          ${active ? "text-d-display" : "hover:text-d-display text-white"}
+          `}
       >
-        <span className="font-label text-highlight font-bold text-left">
-          0{index + 1}
-        </span>
-        <div className="font-landing tracking-widest text-[calc(100vh/32)] text-left">
-          {title}
+        <div className="w-full flex flex-row items-center mb-3">
+          <div className="font-landing text-2xl items-center translate-y-0.5">
+            {index + 1}
+            {" - "}
+            {title}
+          </div>
         </div>
-        <span className="text-left overflow-auto font-label text-[calc(100vh/50)]">
-          {description}
-        </span>
-        <hr className="border-l-display mt-3" />
+        <div className="flex px-3 w-full mb-3">
+          <div
+            className={`w-full h-[1px]
+            ${active ? "bg-d-display" : "bg-white group-hover:bg-d-display"}
+            transition-all duration-300
+            `}
+          ></div>
+        </div>
+        <div className="font-label text-left">{description}</div>
+        <div
+          className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 ${
+            active ? "bg-white" : "bg-l-display group-hover:bg-white"
+          } rounded-full h-[30px] w-[30px]
+        group-hover:translate-x-1/4 
+        transition-all duration-300
+        `}
+        ></div>
       </div>
     </>
   );

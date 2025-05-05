@@ -49,7 +49,6 @@ import StravaContent from "./content/stravaContent.jsx";
 import GithubContent from "./content/githubContent.jsx";
 import LeetcodeContent from "./content/leetcodeContent.jsx";
 import { useState } from "react";
-import { useEffect } from "react";
 
 function renderPlatformContent(item, tidbit) {
   if (item.type === "github") {
@@ -86,7 +85,7 @@ function renderPlatformContent(item, tidbit) {
 }
 
 function parseActivityItem(item) {
-  console.log("ActivityCard item: ", item);
+  //console.log("ActivityCard item: ", item);
 
   if (!item) {
     return {
@@ -206,28 +205,6 @@ export default function ActivityCard({ item }) {
             >
               {renderPlatformContent(item, true)}
             </div>
-
-            {/**
-            <div
-              className={`relative overflow-hidden ${
-                expanded ? "h-[180px]" : "h-[130px]"
-              } w-[180px]`}
-            >
-              <div className="relative flex flex-col pt-[45px]">
-                <img
-                  src={icon}
-                  className="absolute top-0 -translate-x-1/2 left-1/2 z-20"
-                  loading="lazy"
-                />
-              </div>
-              <div className="relative h-[85px] group-hover:bg-white duration-300 transition-all border">
-                <PolkaDotPattern />
-              </div>
-            </div>
-            <div className="w-full h-20 bg-green-50 relative bottom-0 translate-y-full">
-              hi
-            </div>
-             */}
           </div>
 
           <div
