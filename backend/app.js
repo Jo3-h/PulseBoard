@@ -45,6 +45,9 @@ app.use("/api/event", eventRoutes);
 app.use("/api/leetcode", leetcodeRoutes);
 app.use("/api/strava", stravaRoutes);
 app.use("/api/resume", resumeRoutes);
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend is contactable" });
+});
 
 // Export the app
 module.exports = app;
