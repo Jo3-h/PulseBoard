@@ -3,29 +3,32 @@
 import os
 import json
 import requests
-from dotenv import load_dotenv, set_key
 import webbrowser
 import http.server
 import socketserver
 import urllib.parse
 import threading
-from pprint import pprint
+from dotenv import load_dotenv
+from time import sleep
 
 class OAuthHandler(http.server.BaseHTTPRequestHandler):
-
     def exchange_code_for_tokens(self):
         payload = {
-            'client_id' : os.getenv('STRAVA_CLIENT_ID'),
-            'client_secret' : os.getenv('STRAVA_CLIENT_SECRET'),
-            'code' : self.authorization_code,
-            'grant_type' : 'authorization_code',
+            'client_id': os.getenv('STRAVA_CLIENT_ID'),
+            'client_secret': os.getenv('STRAVA_CLIENT_SECRET'),
+            'code': self.authorization_code,
+            'grant_type': 'authorization_code',
             'redirect_uri': os.getenv('STRAVA_REDIRECT_URI'),
         }
 
-        response = requests.post("https://www.strava.com/oauth/token", data=payload)
-        tokens = response.json()
+        try:
+            response = requests.post("https://www.strava.com/oauth/token", data=payload, timeout=10)
+            response.raise_for_status()
+            tokens = response.json()
+        except Exception as e:
+            print(f"Error exchanging code for tokens: {e}")
+            return
 
-        # Save the tokens to the .env file
         if 'access_token' in tokens and 'refresh_token' in tokens:
             with open(".env", "r") as f:
                 lines = f.readlines()
@@ -34,33 +37,28 @@ class OAuthHandler(http.server.BaseHTTPRequestHandler):
                 for line in lines:
                     if not line.startswith("STRAVA_ACCESS_TOKEN") and not line.startswith("STRAVA_REFRESH_TOKEN"):
                         f.write(line)
-
                 f.write(f"STRAVA_ACCESS_TOKEN={tokens['access_token']}\n")
                 f.write(f"STRAVA_REFRESH_TOKEN={tokens['refresh_token']}\n")
+
             print('Tokens received and saved to .env file!')
 
     def do_GET(self):
-
         query = urllib.parse.urlparse(self.path).query
         params = urllib.parse.parse_qs(query)
 
         if 'code' in params:
-            authorization_code = params['code'][0]
-            print(f"Authorization code received: {authorization_code}")
-            
-            # Send a success response
+            self.authorization_code = params['code'][0]
+            print(f"Authorization code received: {self.authorization_code}")
+
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
             self.wfile.write(b"Authorization successful! You can close this window.")
-            
-            # Exchange authorization code for tokens
-            self.authorization_code = authorization_code
+
             self.exchange_code_for_tokens()
             threading.Thread(target=self.server.shutdown).start()
-
             return
-        
+
         self.send_response(400)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
@@ -68,148 +66,127 @@ class OAuthHandler(http.server.BaseHTTPRequestHandler):
 
 def run_server():
     handler = OAuthHandler
-    with socketserver.TCPServer(("localhost", int(os.getenv('STRAVA_REDIRECT_PORT'))), handler) as httpd:
-        print(f"Server started at localhost:{os.getenv('STRAVA_REDIRECT_PORT')}")
+    with socketserver.TCPServer(("localhost", int(os.getenv('STRAVA_REDIRECT_PORT', 8080))), handler) as httpd:
+        print(f"Server started at localhost:{os.getenv('STRAVA_REDIRECT_PORT', 8080)}")
         httpd.serve_forever()
 
 def get_strava_tokens():
-
     load_dotenv()
     access_token = os.getenv('STRAVA_ACCESS_TOKEN')
     refresh_token = os.getenv('STRAVA_REFRESH_TOKEN')
 
-    # if both tokens are present then return them to the calling function
     if access_token and refresh_token:
         return access_token, refresh_token
-    
-    # else request tokens from the user
+
     token_url = f"http://www.strava.com/oauth/authorize?client_id={os.getenv('STRAVA_CLIENT_ID')}&response_type=code&redirect_uri={os.getenv('STRAVA_REDIRECT_URI')}&approval_prompt=force&scope=read,profile:read_all,activity:read_all"
 
-    # run the server in a separate thread to accept the authorization code
     server_thread = threading.Thread(target=run_server)
     server_thread.daemon = True
     server_thread.start()
 
     webbrowser.open(token_url)
 
-    while not os.getenv('STRAVA_ACCESS_TOKEN') or not os.getenv('STRAVA_REFRESH_TOKEN'):
+    max_wait = 120  # seconds
+    waited = 0
+    while (not os.getenv('STRAVA_ACCESS_TOKEN') or not os.getenv('STRAVA_REFRESH_TOKEN')) and waited < max_wait:
+        sleep(2)
+        waited += 2
         load_dotenv()
-        pass
 
-    # kill the server thread
+    if waited >= max_wait:
+        raise Exception("Timeout waiting for Strava authentication.")
+
     return os.getenv('STRAVA_ACCESS_TOKEN'), os.getenv('STRAVA_REFRESH_TOKEN')
 
-class strava_api():
-
+class StravaAPI:
     def __init__(self, access_token, refresh_token):
         self.access_token = access_token
         self.refresh_token = refresh_token
         self.BASE_URL = 'https://www.strava.com/api/v3/'
 
     def refresh_tokens(self):
-
-        print('Refreshing tokens... ',end='')
+        print('Refreshing tokens... ', end='')
 
         url = f'{self.BASE_URL}/oauth/token'
         params = {
             'client_id': os.getenv('STRAVA_CLIENT_ID'),
             'client_secret': os.getenv('STRAVA_CLIENT_SECRET'),
-            'grant_type':'refresh_token',
+            'grant_type': 'refresh_token',
             'refresh_token': self.refresh_token
         }
 
-        response = requests.post(url, params=params)
-
-        if response.status_code != 200:
-            print("Error occurred while refreshing tokens.")
-            print(json.dumps(response.json(), indent=4))
+        try:
+            response = requests.post(url, params=params, timeout=10)
+            response.raise_for_status()
+            tokens = response.json()
+        except Exception as e:
+            print(f"Error refreshing tokens: {e}")
             return
 
-        tokens = response.json()
         self.access_token = tokens['access_token']
         self.refresh_token = tokens['refresh_token']
-
         print('Tokens refreshed successfully!')
 
-        return
-    
     def get_detailed_activity(self, activity_id):
-
         url = f'{self.BASE_URL}/activities/{activity_id}'
-        headers = {
-            "Authorization" : f"Bearer {self.access_token}"
-        }
-        params = {
-            'id': activity_id,
-            'include_all_efforts': False,
-        }
+        headers = {"Authorization": f"Bearer {self.access_token}"}
+        params = {'id': activity_id, 'include_all_efforts': False}
 
-        response = requests.get(url, headers=headers, params=params)
+        try:
+            response = requests.get(url, headers=headers, params=params, timeout=10)
+            if response.status_code == 401:
+                self.refresh_tokens()
+                return self.get_detailed_activity(activity_id)
 
-        if response.status_code == 401:
-            self.refresh_tokens()
-            return self.get_detailed_activity(activity_id)
+            response.raise_for_status()
+            return response.json()
 
-        if response.status_code != 200:
-            print("Error occurred while fetching detailed activity.")
-            print(json.dumps(response.json(), indent=4))
-            return
-        
-        detailed_activity = response.json()
-
-        return detailed_activity
+        except Exception as e:
+            print(f"Failed to fetch detailed activity {activity_id}: {e}")
+            return {}
 
     def get_activities(self):
-
         url = f'{self.BASE_URL}/athlete/activities'
-        params = {
-            'page': 1,
-            'per_page': 50,
-        }
-        headers = {
-            "Authorization" : f"Bearer {self.access_token}"
-        }
+        params = {'page': 1, 'per_page': 50}
+        headers = {"Authorization": f"Bearer {self.access_token}"}
 
-        response = requests.get(url, headers=headers, params=params)
-        if response.status_code == 401:
-            self.refresh_tokens()
-            return self.get_activities()
+        try:
+            response = requests.get(url, headers=headers, params=params, timeout=10)
+            if response.status_code == 401:
+                self.refresh_tokens()
+                return self.get_activities()
 
-        if response.status_code != 200:
-            print("Error occurred while fetching activities.")
-            return
+            response.raise_for_status()
+            activities = response.json()
 
-        activities = response.json()
-        for activity in activities:
+            for activity in activities:
+                details = self.get_detailed_activity(activity.get('id'))
+                if details:
+                    activity['description'] = details.get('description')
+                    activity['elapsed_sec'] = details.get('elapsed_time')
+                    activity['kudos_count'] = details.get('kudos_count')
+                    activity['comment_count'] = details.get('comment_count')
+                    activity['is_private'] = details.get('private', False)
+                    activity['achievement_count'] = details.get('achievement_count')
+                    activity['max_speed'] = details.get('max_speed')
 
-            # get detailed activity data
-            details = self.get_detailed_activity(activity['id'])
+            return activities
 
-            activity['description'] = details['description']
-            activity['elapsed_sec'] = details['elapsed_time']
-            activity['kudos_count'] = details['kudos_count']
-            activity['comment_count'] = details['comment_count']
-            activity['is_private'] = details['private']
-            activity['achievement_count'] = details['achievement_count']
-            activity['max_speed'] = details['max_speed']
-
-        return activities
-
+        except Exception as e:
+            print(f"Error fetching activities: {e}")
+            return []
 
 def extract_strava_data():
-
     print('Extracting Strava data...    ', end='')
 
-    # check for valid access token and refresh token
-    access_token, refresh_token = get_strava_tokens()
-    api = strava_api(access_token, refresh_token)
+    try:
+        access_token, refresh_token = get_strava_tokens()
+        api = StravaAPI(access_token, refresh_token)
+        activities = api.get_activities()
 
-    # get activities
-    activities = api.get_activities()
+        with open('strava_data.json', 'w') as f:
+            json.dump(activities, f, indent=4)
 
-    with open('strava_data.json', 'w') as f:
-        json.dump(activities, f, indent=4)
-
-    print('Data extracted successfully!\n')
-
-    return 
+        print('Data extracted successfully!\n')
+    except Exception as e:
+        print(f"Failed to extract data: {e}\n")

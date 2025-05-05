@@ -10,7 +10,11 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://pulseboardapp.com", // Allow requests from this domain
+  })
+);
 app.use(
   morgan("combined", { stream: { write: (msg) => logger.info(msg.trim()) } })
 );

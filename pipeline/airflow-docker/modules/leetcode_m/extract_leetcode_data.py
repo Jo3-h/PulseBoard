@@ -6,25 +6,30 @@ import requests
 import json
 from dotenv import load_dotenv
 import time
-from datetime import datetime 
+from datetime import datetime
 
 load_dotenv()
 
-class leetcode_api:
+class LeetCodeAPI:
 
     def __init__(self, username):
+        if not username:
+            raise ValueError("Username cannot be empty.")
+        
         self.username = username
         self.BASE_URL = 'https://leetcode.com/graphql'
         self.URL = 'https://leetcode.com/'
         self.headers = {
             'Content-Type': 'application/json',
         }
-        self.profile_url = f'https://leetcode.com/u/{self.username}/' # https://leetcode.com/u/Jo3-h/
+        self.profile_url = f'https://leetcode.com/u/{self.username}/'
 
     # Private method to extract question data
     def __extract_question_data(self, titleSlug):
-
-        # URL to webscrape
+        if not titleSlug:
+            print("Invalid titleSlug provided.")
+            return None
+        
         return_payload = {
             'description': None,
             'difficulty': None,
@@ -54,24 +59,34 @@ class leetcode_api:
                         }'''
         }
 
-        response = requests.post(self.BASE_URL, headers=self.headers, json=payload)
-        if response.status_code != 200:
-            print(f'Error: {response.status_code}, {response.text}')
+        try:
+            response = requests.post(self.BASE_URL, headers=self.headers, json=payload)
+            response.raise_for_status()  # This will raise an error if the response code is not 200
+        except requests.exceptions.RequestException as e:
+            print(f"Error fetching question data: {e}")
             return return_payload
         
-        question = response.json()['data']['question']
-
-        return_payload['description'] = question['content']
-        return_payload['difficulty'] = question['difficulty']
-        return_payload['topics'] = ', '.join(tag['name'] for tag in question['topicTags'])
-        return_payload['stats'] = question['stats']
-        return_payload['likes'] = question['likes']
-        return_payload['dislikes'] = question['dislikes']
-
+        try:
+            question = response.json().get('data', {}).get('question', None)
+            if question:
+                return_payload['description'] = question['content']
+                return_payload['difficulty'] = question['difficulty']
+                return_payload['topics'] = ', '.join(tag['name'] for tag in question['topicTags'])
+                return_payload['stats'] = question['stats']
+                return_payload['likes'] = question['likes']
+                return_payload['dislikes'] = question['dislikes']
+            else:
+                print(f"No data found for titleSlug: {titleSlug}")
+        except (KeyError, TypeError) as e:
+            print(f"Error parsing question data: {e}")
+        
         return return_payload
 
     def __extract_solution_data(self, topicId):
-
+        if not topicId:
+            print("Invalid topicId provided.")
+            return None
+        
         return_payload = {
             'event_id': None,
             'event_type': 'Solution',
@@ -79,7 +94,7 @@ class leetcode_api:
             'solution_name': None,
             'slug': None,
             'topics': None,
-            'content':None,
+            'content': None,
         }
 
         payload = {
@@ -109,9 +124,9 @@ class leetcode_api:
                                 title
                                 }
                             }
-                            }
+                        }
                                 
-                                fragment ugcSolutionArticleFragment on SolutionArticleNode {
+                        fragment ugcSolutionArticleFragment on SolutionArticleNode {
                             uuid
                             title
                             slug
@@ -161,21 +176,28 @@ class leetcode_api:
                         }'''
         }
 
-        response = requests.post(self.BASE_URL, headers=self.headers, json=payload)
-        if response.status_code != 200:
-            print(f'Error: {response.status_code}, {response.text}')
+        try:
+            response = requests.post(self.BASE_URL, headers=self.headers, json=payload)
+            response.raise_for_status()  # Raise error if the response is not successful
+        except requests.exceptions.RequestException as e:
+            print(f"Error fetching solution data: {e}")
             return return_payload
         
-        solution = response.json()['data']['ugcArticleSolutionArticle']
-        return_payload['event_id'] = topicId
-        return_payload['solution_name'] = solution['title']
-        return_payload['slug'] = solution['slug']
-        return_payload['topics'] = ', '.join(tag['name'] for tag in solution['tags'])
-        return_payload['content'] = solution['content']
-        return_payload['timestamp'] = solution['createdAt']
-
+        try:
+            solution = response.json().get('data', {}).get('ugcArticleSolutionArticle', None)
+            if solution:
+                return_payload['event_id'] = topicId
+                return_payload['solution_name'] = solution['title']
+                return_payload['slug'] = solution['slug']
+                return_payload['topics'] = ', '.join(tag['name'] for tag in solution['tags'])
+                return_payload['content'] = solution['content']
+                return_payload['timestamp'] = solution['createdAt']
+            else:
+                print(f"No solution data found for topicId: {topicId}")
+        except (KeyError, TypeError) as e:
+            print(f"Error parsing solution data: {e}")
+        
         return return_payload
-
     def get_user_badges(self):
 
         # Define the GraphQL query payload
@@ -608,7 +630,6 @@ class leetcode_api:
         return response.json()
 
     def extract_data(self):
-
         return_payload = {}
         
         # Extract the data from the LeetCode API
@@ -619,49 +640,46 @@ class leetcode_api:
         return_payload['recent_ac_submissions'] = []
         if recent_submissions:
             for submission in recent_submissions:
-
-                # Extract the relevant data from the submission
                 question_data = self.__extract_question_data(submission['titleSlug'])
+                if question_data:
+                    return_payload['recent_ac_submissions'].append({
+                        'event_id': submission['id'],
+                        'event_type': 'Submission',
+                        'problem_name': submission['title'],
+                        'problem_description': question_data['description'],
+                        'problem_url': f'{self.URL}problems/{submission["titleSlug"]}/',
+                        'status': 'Accepted',
+                        'difficulty': question_data['difficulty'],
+                        'timestamp': submission['timestamp'],
+                        'solution_url': '',
+                        'topics': question_data['topics'],
+                        'stats': question_data['stats'],
+                        'likes': question_data['likes'],
+                        'dislikes': question_data['dislikes'],
+                    })
 
-                return_payload['recent_ac_submissions'].append({
-                    'event_id': submission['id'],
-                    'event_type': 'Submission',
-                    'problem_name': submission['title'],
-                    'problem_description':question_data['description'],
-                    'problem_url': f'{self.URL}problems/{submission["titleSlug"]}/',
-                    'status': 'Accepted',
-                    'difficulty': question_data['difficulty'],
-                    'timestamp': submission['timestamp'],
-                    'solution_url':'',
-                    'topics':question_data['topics'],
-                    'stats':question_data['stats'],
-                    'likes':question_data['likes'],
-                    'dislikes':question_data['dislikes'],
-                })
-
-        
         # Extract recent solution data
         recent_solutions = self.get_user_recent_solutions()
         return_payload['recent_solutions'] = []
         for solution in recent_solutions:
-
             solution_data = self.__extract_solution_data(solution['topicId'])
-            return_payload['recent_solutions'].append({
-                'event_id': solution['topicId'],
-                'event_type': 'Solution',
-                'problem_name': solution['questionTitle'],
-                'problem_description': '',
-                'problem_url': f'{self.URL}problems/{solution["questionSlug"]}/description/',
-                'difficulty': '',
-                'timestamp': solution['createdAt'],
-                'solution_name': solution['title'],
-                'solution_content': solution_data['content'],
-                'solution_url': f'{self.URL}problems/{solution["questionSlug"]}/{solution["topicId"]}/{solution["slug"]}',
-                'topics': solution_data['topics'],
-                'hits': solution['hitCount'],
-                'likes':0,
-                'dislikes':0,
-            })
+            if solution_data:
+                return_payload['recent_solutions'].append({
+                    'event_id': solution['topicId'],
+                    'event_type': 'Solution',
+                    'problem_name': solution['questionTitle'],
+                    'problem_description': '',
+                    'problem_url': f'{self.URL}problems/{solution["questionSlug"]}/description/',
+                    'difficulty': '',
+                    'timestamp': solution['createdAt'],
+                    'solution_name': solution['title'],
+                    'solution_content': solution_data['content'],
+                    'solution_url': f'{self.URL}problems/{solution["questionSlug"]}/{solution["topicId"]}/{solution["slug"]}',
+                    'topics': solution_data['topics'],
+                    'hits': solution['hitCount'],
+                    'likes': 0,
+                    'dislikes': 0,
+                })
 
         # Extract profile summary information
         summary_temp = {
@@ -671,23 +689,22 @@ class leetcode_api:
         summary_temp['data']['ranking'] = self.get_user_public_profile()['data']['matchedUser']['profile']['ranking']
         return_payload['summary'] = [summary_temp]
 
-        # extract calendar data
+        # Extract calendar data
         return_payload['calendar'] = self.get_user_profile_calendar()
 
         return return_payload
 
 def extract_leetcode_data():
+    try:
+        print('Extracting LeetCode data...  ', end='')
 
-    print('Extracting LeetCode data...  ', end='')
+        # Extract the data from the LeetCode API
+        api = LeetCodeAPI(os.getenv('LEETCODE_USER'))
+        data = api.extract_data()
 
-    # Extract the data from the LeetCode API
-    api = leetcode_api(os.getenv('LEETCODE_USER'))
+        with open('leetcode_data.json', 'w') as f:
+            json.dump(data, f, indent=4)
 
-    data = api.extract_data()
-
-    with open('leetcode_data.json', 'w') as f:
-        json.dump(data, f, indent=4)
-
-    print('Data extracted successfully!\n')
-
-    return
+        print('Data extracted successfully!\n')
+    except Exception as e:
+        print(f"An error occurred while extracting LeetCode data: {e}")
