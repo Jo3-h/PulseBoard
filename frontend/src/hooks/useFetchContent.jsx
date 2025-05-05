@@ -8,7 +8,7 @@ export default function useFetchContent() {
       try {
         // Fetch Strava data
         const stravaResponse = await fetch(
-          `http://${import.meta.env.VITE_BACKEND_HOST}:${
+          `https://${import.meta.env.VITE_BACKEND_HOST}:${
             import.meta.env.VITE_BACKEND_PORT
           }/api/strava/activity`
         );
@@ -21,7 +21,7 @@ export default function useFetchContent() {
 
         // Fetch LeetCode data
         const leetcodeResponse = await fetch(
-          `http://${import.meta.env.VITE_BACKEND_HOST}:${
+          `https://${import.meta.env.VITE_BACKEND_HOST}:${
             import.meta.env.VITE_BACKEND_PORT
           }/api/leetcode/activity`
         );
@@ -34,7 +34,7 @@ export default function useFetchContent() {
 
         // Fetch GitHub data
         const githubResponse = await fetch(
-          `http://${import.meta.env.VITE_BACKEND_HOST}:${
+          `https://${import.meta.env.VITE_BACKEND_HOST}:${
             import.meta.env.VITE_BACKEND_PORT
           }/api/github/activity`
         );

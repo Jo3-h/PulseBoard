@@ -10,7 +10,7 @@ export default function useEventHeatmapData() {
     async function fetchEvents() {
       try {
         const eventsResponse = await fetch(
-          `http://${import.meta.env.VITE_BACKEND_HOST}:${
+          `https://${import.meta.env.VITE_BACKEND_HOST}:${
             import.meta.env.VITE_BACKEND_PORT
           }/api/event/event-calendar`
         );

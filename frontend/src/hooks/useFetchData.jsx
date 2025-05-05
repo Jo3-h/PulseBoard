@@ -7,7 +7,7 @@ export default function useFetchData({ endpoint }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${import.meta.env.VITE_BACKEND_HOST}:${
+          `https://${import.meta.env.VITE_BACKEND_HOST}:${
             import.meta.env.VITE_BACKEND_PORT
           }/api/${endpoint}`
         );
