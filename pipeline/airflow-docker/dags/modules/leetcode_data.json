@@ -54,6 +54,36 @@
     ],
     "recent_ac_submissions": [
         {
+            "event_id": "1626590858",
+            "event_type": "Submission",
+            "problem_name": "Build Array from Permutation",
+            "problem_description": "<p>Given a <strong>zero-based permutation</strong> <code>nums</code> (<strong>0-indexed</strong>), build an array <code>ans</code> of the <strong>same length</strong> where <code>ans[i] = nums[nums[i]]</code> for each <code>0 &lt;= i &lt; nums.length</code> and return it.</p>\n\n<p>A <strong>zero-based permutation</strong> <code>nums</code> is an array of <strong>distinct</strong> integers from <code>0</code> to <code>nums.length - 1</code> (<strong>inclusive</strong>).</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,2,1,5,3,4]\n<strong>Output:</strong> [0,1,2,4,5,3]<strong>\nExplanation:</strong> The array ans is built as follows: \nans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]\n    = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]\n    = [0,1,2,4,5,3]</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [5,0,1,2,3,4]\n<strong>Output:</strong> [4,5,0,1,2,3]\n<strong>Explanation:</strong> The array ans is built as follows:\nans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]\n    = [nums[5], nums[0], nums[1], nums[2], nums[3], nums[4]]\n    = [4,5,0,1,2,3]</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 1000</code></li>\n\t<li><code>0 &lt;= nums[i] &lt; nums.length</code></li>\n\t<li>The elements in <code>nums</code> are <strong>distinct</strong>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow-up:</strong> Can you solve it without using an extra space (i.e., <code>O(1)</code> memory)?</p>\n",
+            "problem_url": "https://leetcode.com/problems/build-array-from-permutation/",
+            "status": "Accepted",
+            "difficulty": "Easy",
+            "timestamp": "1746497708",
+            "solution_url": "",
+            "topics": "Array, Simulation",
+            "stats": "{\"totalAccepted\": \"645.5K\", \"totalSubmission\": \"713.8K\", \"totalAcceptedRaw\": 645523, \"totalSubmissionRaw\": 713837, \"acRate\": \"90.4%\"}",
+            "likes": 3555,
+            "dislikes": 431
+        },
+        {
+            "event_id": "1625916767",
+            "event_type": "Submission",
+            "problem_name": "Count Largest Group",
+            "problem_description": "<p>You are given an integer <code>n</code>.</p>\n\n<p>We need to group the numbers from <code>1</code> to <code>n</code> according to the sum of its digits. For example, the numbers 14 and 5 belong to the <strong>same</strong> group, whereas 13 and 3 belong to <strong>different</strong> groups.</p>\n\n<p>Return the number of groups that have the largest size, i.e. the <strong>maximum</strong> number of elements.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 13\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> There are 9 groups in total, they are grouped according sum of its digits of numbers from 1 to 13:\n[1,10], [2,11], [3,12], [4,13], [5], [6], [7], [8], [9].\nThere are 4 groups with largest size.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 2\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> There are 2 groups [1], [2] of size 1.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+            "problem_url": "https://leetcode.com/problems/count-largest-group/",
+            "status": "Accepted",
+            "difficulty": "Easy",
+            "timestamp": "1746431448",
+            "solution_url": "",
+            "topics": "Hash Table, Math",
+            "stats": "{\"totalAccepted\": \"167K\", \"totalSubmission\": \"222.4K\", \"totalAcceptedRaw\": 167032, \"totalSubmissionRaw\": 222361, \"acRate\": \"75.1%\"}",
+            "likes": 759,
+            "dislikes": 1174
+        },
+        {
             "event_id": "1621517863",
             "event_type": "Submission",
             "problem_name": "Find Numbers with Even Number of Digits",
@@ -64,7 +94,7 @@
             "timestamp": "1745971566",
             "solution_url": "",
             "topics": "Array, Math",
-            "stats": "{\"totalAccepted\": \"915.8K\", \"totalSubmission\": \"1.2M\", \"totalAcceptedRaw\": 915778, \"totalSubmissionRaw\": 1154455, \"acRate\": \"79.3%\"}",
+            "stats": "{\"totalAccepted\": \"916.5K\", \"totalSubmission\": \"1.2M\", \"totalAcceptedRaw\": 916549, \"totalSubmissionRaw\": 1155392, \"acRate\": \"79.3%\"}",
             "likes": 2749,
             "dislikes": 136
         },
@@ -79,7 +109,7 @@
             "timestamp": "1745917981",
             "solution_url": "",
             "topics": "Two Pointers, String",
-            "stats": "{\"totalAccepted\": \"302.4K\", \"totalSubmission\": \"582K\", \"totalAcceptedRaw\": 302394, \"totalSubmissionRaw\": 582019, \"acRate\": \"52.0%\"}",
+            "stats": "{\"totalAccepted\": \"302.5K\", \"totalSubmission\": \"582.3K\", \"totalAcceptedRaw\": 302546, \"totalSubmissionRaw\": 582302, \"acRate\": \"52.0%\"}",
             "likes": 2124,
             "dislikes": 4094
         },
@@ -94,7 +124,7 @@
             "timestamp": "1744618580",
             "solution_url": "",
             "topics": "Array, Enumeration",
-            "stats": "{\"totalAccepted\": \"260.1K\", \"totalSubmission\": \"304.4K\", \"totalAcceptedRaw\": 260116, \"totalSubmissionRaw\": 304389, \"acRate\": \"85.5%\"}",
+            "stats": "{\"totalAccepted\": \"260.3K\", \"totalSubmission\": \"304.6K\", \"totalAcceptedRaw\": 260289, \"totalSubmissionRaw\": 304589, \"acRate\": \"85.5%\"}",
             "likes": 1147,
             "dislikes": 1244
         },
@@ -109,8 +139,8 @@
             "timestamp": "1744435964",
             "solution_url": "",
             "topics": "Math, Recursion",
-            "stats": "{\"totalAccepted\": \"1M\", \"totalSubmission\": \"2.1M\", \"totalAcceptedRaw\": 1007834, \"totalSubmissionRaw\": 2105951, \"acRate\": \"47.9%\"}",
-            "likes": 3242,
+            "stats": "{\"totalAccepted\": \"1M\", \"totalSubmission\": \"2.1M\", \"totalAcceptedRaw\": 1008233, \"totalSubmissionRaw\": 2106731, \"acRate\": \"47.9%\"}",
+            "likes": 3243,
             "dislikes": 291
         },
         {
@@ -124,7 +154,7 @@
             "timestamp": "1744323619",
             "solution_url": "",
             "topics": "Hash Table, String, Bit Manipulation, Sorting",
-            "stats": "{\"totalAccepted\": \"891.6K\", \"totalSubmission\": \"1.5M\", \"totalAcceptedRaw\": 891620, \"totalSubmissionRaw\": 1493807, \"acRate\": \"59.7%\"}",
+            "stats": "{\"totalAccepted\": \"892.2K\", \"totalSubmission\": \"1.5M\", \"totalAcceptedRaw\": 892153, \"totalSubmissionRaw\": 1494649, \"acRate\": \"59.7%\"}",
             "likes": 5195,
             "dislikes": 495
         },
@@ -139,7 +169,7 @@
             "timestamp": "1744323212",
             "solution_url": "",
             "topics": "Hash Table, String, Queue, Counting",
-            "stats": "{\"totalAccepted\": \"2M\", \"totalSubmission\": \"3.1M\", \"totalAcceptedRaw\": 1980151, \"totalSubmissionRaw\": 3118655, \"acRate\": \"63.5%\"}",
+            "stats": "{\"totalAccepted\": \"2M\", \"totalSubmission\": \"3.1M\", \"totalAcceptedRaw\": 1980975, \"totalSubmissionRaw\": 3119733, \"acRate\": \"63.5%\"}",
             "likes": 9264,
             "dislikes": 312
         },
@@ -154,7 +184,7 @@
             "timestamp": "1744159033",
             "solution_url": "",
             "topics": "Array, Hash Table",
-            "stats": "{\"totalAccepted\": \"159.8K\", \"totalSubmission\": \"217.4K\", \"totalAcceptedRaw\": 159759, \"totalSubmissionRaw\": 217442, \"acRate\": \"73.5%\"}",
+            "stats": "{\"totalAccepted\": \"159.8K\", \"totalSubmission\": \"217.5K\", \"totalAcceptedRaw\": 159825, \"totalSubmissionRaw\": 217527, \"acRate\": \"73.5%\"}",
             "likes": 387,
             "dislikes": 500
         },
@@ -169,7 +199,7 @@
             "timestamp": "1744071164",
             "solution_url": "",
             "topics": "Array, Hash Table",
-            "stats": "{\"totalAccepted\": \"170.6K\", \"totalSubmission\": \"238.5K\", \"totalAcceptedRaw\": 170645, \"totalSubmissionRaw\": 238453, \"acRate\": \"71.6%\"}",
+            "stats": "{\"totalAccepted\": \"170.7K\", \"totalSubmission\": \"238.6K\", \"totalAcceptedRaw\": 170729, \"totalSubmissionRaw\": 238580, \"acRate\": \"71.6%\"}",
             "likes": 528,
             "dislikes": 29
         },
@@ -184,8 +214,8 @@
             "timestamp": "1744069544",
             "solution_url": "",
             "topics": "Math, Dynamic Programming, Recursion, Memoization",
-            "stats": "{\"totalAccepted\": \"2.4M\", \"totalSubmission\": \"3.2M\", \"totalAcceptedRaw\": 2362476, \"totalSubmissionRaw\": 3247179, \"acRate\": \"72.8%\"}",
-            "likes": 8660,
+            "stats": "{\"totalAccepted\": \"2.4M\", \"totalSubmission\": \"3.2M\", \"totalAcceptedRaw\": 2363961, \"totalSubmissionRaw\": 3249013, \"acRate\": \"72.8%\"}",
+            "likes": 8663,
             "dislikes": 383
         },
         {
@@ -199,8 +229,8 @@
             "timestamp": "1743990033",
             "solution_url": "",
             "topics": "Array, Dynamic Programming",
-            "stats": "{\"totalAccepted\": \"1.2M\", \"totalSubmission\": \"2.5M\", \"totalAcceptedRaw\": 1196402, \"totalSubmissionRaw\": 2479461, \"acRate\": \"48.3%\"}",
-            "likes": 13156,
+            "stats": "{\"totalAccepted\": \"1.2M\", \"totalSubmission\": \"2.5M\", \"totalAcceptedRaw\": 1197055, \"totalSubmissionRaw\": 2480652, \"acRate\": \"48.3%\"}",
+            "likes": 13159,
             "dislikes": 279
         },
         {
@@ -214,7 +244,7 @@
             "timestamp": "1743919107",
             "solution_url": "",
             "topics": "Array, Math, Dynamic Programming, Sorting",
-            "stats": "{\"totalAccepted\": \"433.6K\", \"totalSubmission\": \"889.5K\", \"totalAcceptedRaw\": 433561, \"totalSubmissionRaw\": 889511, \"acRate\": \"48.7%\"}",
+            "stats": "{\"totalAccepted\": \"433.7K\", \"totalSubmission\": \"889.8K\", \"totalAcceptedRaw\": 433701, \"totalSubmissionRaw\": 889783, \"acRate\": \"48.7%\"}",
             "likes": 6567,
             "dislikes": 320
         },
@@ -229,8 +259,8 @@
             "timestamp": "1743814438",
             "solution_url": "",
             "topics": "Linked List, Two Pointers, Divide and Conquer, Sorting, Merge Sort",
-            "stats": "{\"totalAccepted\": \"1M\", \"totalSubmission\": \"1.7M\", \"totalAcceptedRaw\": 1015542, \"totalSubmissionRaw\": 1654228, \"acRate\": \"61.4%\"}",
-            "likes": 12263,
+            "stats": "{\"totalAccepted\": \"1M\", \"totalSubmission\": \"1.7M\", \"totalAcceptedRaw\": 1016064, \"totalSubmissionRaw\": 1654984, \"acRate\": \"61.4%\"}",
+            "likes": 12266,
             "dislikes": 386
         },
         {
@@ -244,7 +274,7 @@
             "timestamp": "1743812578",
             "solution_url": "",
             "topics": "Array, Math, Backtracking, Bit Manipulation, Combinatorics, Enumeration",
-            "stats": "{\"totalAccepted\": \"312.8K\", \"totalSubmission\": \"347.2K\", \"totalAcceptedRaw\": 312796, \"totalSubmissionRaw\": 347250, \"acRate\": \"90.1%\"}",
+            "stats": "{\"totalAccepted\": \"312.9K\", \"totalSubmission\": \"347.4K\", \"totalAcceptedRaw\": 312919, \"totalSubmissionRaw\": 347392, \"acRate\": \"90.1%\"}",
             "likes": 2560,
             "dislikes": 320
         },
@@ -259,7 +289,7 @@
             "timestamp": "1743728299",
             "solution_url": "",
             "topics": "Array, Heap (Priority Queue)",
-            "stats": "{\"totalAccepted\": \"370.7K\", \"totalSubmission\": \"913.2K\", \"totalAcceptedRaw\": 370736, \"totalSubmissionRaw\": 913215, \"acRate\": \"40.6%\"}",
+            "stats": "{\"totalAccepted\": \"370.9K\", \"totalSubmission\": \"913.6K\", \"totalAcceptedRaw\": 370927, \"totalSubmissionRaw\": 913642, \"acRate\": \"40.6%\"}",
             "likes": 6583,
             "dislikes": 471
         },
@@ -274,8 +304,8 @@
             "timestamp": "1743726705",
             "solution_url": "",
             "topics": "Hash Table, Tree, Depth-First Search, Breadth-First Search, Binary Tree",
-            "stats": "{\"totalAccepted\": \"225.9K\", \"totalSubmission\": \"286.4K\", \"totalAcceptedRaw\": 225857, \"totalSubmissionRaw\": 286361, \"acRate\": \"78.9%\"}",
-            "likes": 2531,
+            "stats": "{\"totalAccepted\": \"225.9K\", \"totalSubmission\": \"286.4K\", \"totalAcceptedRaw\": 225912, \"totalSubmissionRaw\": 286419, \"acRate\": \"78.9%\"}",
+            "likes": 2532,
             "dislikes": 941
         },
         {
@@ -289,7 +319,7 @@
             "timestamp": "1743663851",
             "solution_url": "",
             "topics": "Tree, Depth-First Search, Breadth-First Search",
-            "stats": "{\"totalAccepted\": \"319.3K\", \"totalSubmission\": \"438.5K\", \"totalAcceptedRaw\": 319342, \"totalSubmissionRaw\": 438461, \"acRate\": \"72.8%\"}",
+            "stats": "{\"totalAccepted\": \"319.4K\", \"totalSubmission\": \"438.6K\", \"totalAcceptedRaw\": 319424, \"totalSubmissionRaw\": 438556, \"acRate\": \"72.8%\"}",
             "likes": 2822,
             "dislikes": 91
         },
@@ -304,8 +334,8 @@
             "timestamp": "1743663586",
             "solution_url": "",
             "topics": "Tree, Depth-First Search, Binary Tree",
-            "stats": "{\"totalAccepted\": \"2M\", \"totalSubmission\": \"3.1M\", \"totalAcceptedRaw\": 1986351, \"totalSubmissionRaw\": 3140591, \"acRate\": \"63.2%\"}",
-            "likes": 14669,
+            "stats": "{\"totalAccepted\": \"2M\", \"totalSubmission\": \"3.1M\", \"totalAcceptedRaw\": 1987781, \"totalSubmissionRaw\": 3142424, \"acRate\": \"63.3%\"}",
+            "likes": 14671,
             "dislikes": 1158
         },
         {
@@ -319,39 +349,9 @@
             "timestamp": "1743639373",
             "solution_url": "",
             "topics": "Array",
-            "stats": "{\"totalAccepted\": \"151.3K\", \"totalSubmission\": \"266.6K\", \"totalAcceptedRaw\": 151251, \"totalSubmissionRaw\": 266624, \"acRate\": \"56.7%\"}",
+            "stats": "{\"totalAccepted\": \"151.3K\", \"totalSubmission\": \"266.7K\", \"totalAcceptedRaw\": 151287, \"totalSubmissionRaw\": 266690, \"acRate\": \"56.7%\"}",
             "likes": 792,
             "dislikes": 20
-        },
-        {
-            "event_id": "1593772771",
-            "event_type": "Submission",
-            "problem_name": "Bitwise AND of Numbers Range",
-            "problem_description": "<p>Given two integers <code>left</code> and <code>right</code> that represent the range <code>[left, right]</code>, return <em>the bitwise AND of all numbers in this range, inclusive</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> left = 5, right = 7\n<strong>Output:</strong> 4\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> left = 0, right = 0\n<strong>Output:</strong> 0\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> left = 1, right = 2147483647\n<strong>Output:</strong> 0\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= left &lt;= right &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
-            "problem_url": "https://leetcode.com/problems/bitwise-and-of-numbers-range/",
-            "status": "Accepted",
-            "difficulty": "Medium",
-            "timestamp": "1743555642",
-            "solution_url": "",
-            "topics": "Bit Manipulation",
-            "stats": "{\"totalAccepted\": \"451.4K\", \"totalSubmission\": \"947.8K\", \"totalAcceptedRaw\": 451353, \"totalSubmissionRaw\": 947814, \"acRate\": \"47.6%\"}",
-            "likes": 4137,
-            "dislikes": 311
-        },
-        {
-            "event_id": "1593752916",
-            "event_type": "Submission",
-            "problem_name": "Single Number II",
-            "problem_description": "<p>Given an integer array <code>nums</code> where&nbsp;every element appears <strong>three times</strong> except for one, which appears <strong>exactly once</strong>. <em>Find the single element and return it</em>.</p>\n\n<p>You must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> nums = [2,2,3,2]\n<strong>Output:</strong> 3\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> nums = [0,1,0,1,0,1,99]\n<strong>Output:</strong> 99\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>\n\t<li>Each element in <code>nums</code> appears exactly <strong>three times</strong> except for one element which appears <strong>once</strong>.</li>\n</ul>\n",
-            "problem_url": "https://leetcode.com/problems/single-number-ii/",
-            "status": "Accepted",
-            "difficulty": "Medium",
-            "timestamp": "1743553657",
-            "solution_url": "",
-            "topics": "Array, Bit Manipulation",
-            "stats": "{\"totalAccepted\": \"725.7K\", \"totalSubmission\": \"1.1M\", \"totalAcceptedRaw\": 725731, \"totalSubmissionRaw\": 1116785, \"acRate\": \"65.0%\"}",
-            "likes": 8281,
-            "dislikes": 718
         }
     ],
     "recent_solutions": [
@@ -586,7 +586,7 @@
             "data": {
                 "numAcceptedQuestions": [
                     {
-                        "count": 155,
+                        "count": 157,
                         "difficulty": "EASY"
                     },
                     {
@@ -600,7 +600,7 @@
                 ],
                 "numFailedQuestions": [
                     {
-                        "count": 2,
+                        "count": 3,
                         "difficulty": "EASY"
                     },
                     {
@@ -614,11 +614,11 @@
                 ],
                 "numUntouchedQuestions": [
                     {
-                        "count": 717,
+                        "count": 714,
                         "difficulty": "EASY"
                     },
                     {
-                        "count": 1661,
+                        "count": 1662,
                         "difficulty": "MEDIUM"
                     },
                     {
@@ -629,7 +629,7 @@
                 "userSessionBeatsPercentage": [
                     {
                         "difficulty": "EASY",
-                        "percentage": 95.84
+                        "percentage": 95.95
                     },
                     {
                         "difficulty": "MEDIUM",
@@ -641,7 +641,7 @@
                     }
                 ],
                 "totalQuestionBeatsPercentage": 97.8,
-                "ranking": 282448
+                "ranking": 281372
             }
         }
     ],
@@ -654,8 +654,8 @@
                         2025
                     ],
                     "streak": 39,
-                    "totalActiveDays": 110,
-                    "submissionCalendar": "{\"1735776000\": 1, \"1736208000\": 1, \"1736294400\": 2, \"1736380800\": 1, \"1736726400\": 1, \"1736899200\": 2, \"1736985600\": 1, \"1737417600\": 3, \"1737590400\": 2, \"1737676800\": 1, \"1738022400\": 24, \"1738281600\": 5, \"1738454400\": 2, \"1738540800\": 17, \"1738627200\": 11, \"1738713600\": 4, \"1738800000\": 1, \"1738886400\": 21, \"1738972800\": 2, \"1739059200\": 2, \"1739145600\": 10, \"1739232000\": 8, \"1739318400\": 18, \"1739404800\": 4, \"1739491200\": 1, \"1739836800\": 2, \"1740096000\": 1, \"1740355200\": 8, \"1740614400\": 13, \"1740960000\": 6, \"1741046400\": 22, \"1741132800\": 9, \"1741219200\": 7, \"1741305600\": 1, \"1741392000\": 3, \"1741478400\": 1, \"1741564800\": 8, \"1741651200\": 7, \"1741737600\": 3, \"1741824000\": 20, \"1741910400\": 11, \"1741996800\": 4, \"1742083200\": 22, \"1742169600\": 8, \"1742256000\": 14, \"1742342400\": 8, \"1742428800\": 4, \"1742515200\": 5, \"1742601600\": 1, \"1742688000\": 4, \"1742774400\": 1, \"1742860800\": 3, \"1742947200\": 8, \"1743033600\": 1, \"1743120000\": 2, \"1743206400\": 1, \"1743292800\": 2, \"1743379200\": 2, \"1743465600\": 4, \"1743552000\": 7, \"1743638400\": 4, \"1743724800\": 3, \"1743811200\": 3, \"1743897600\": 1, \"1743984000\": 2, \"1744070400\": 1, \"1744156800\": 3, \"1744243200\": 4, \"1744416000\": 1, \"1744588800\": 1, \"1745884800\": 1, \"1745971200\": 1, \"1728604800\": 2, \"1728691200\": 2, \"1728777600\": 6, \"1728864000\": 11, \"1728950400\": 6, \"1729036800\": 25, \"1729123200\": 6, \"1729382400\": 4, \"1729468800\": 16, \"1729555200\": 38, \"1729641600\": 16, \"1729728000\": 8, \"1729814400\": 4, \"1729987200\": 5, \"1730073600\": 3, \"1730246400\": 6, \"1730678400\": 10, \"1730764800\": 1, \"1730851200\": 6, \"1730937600\": 1, \"1731283200\": 8, \"1731369600\": 1, \"1731456000\": 1, \"1731888000\": 4, \"1732579200\": 1, \"1732752000\": 4, \"1732838400\": 2, \"1733097600\": 5, \"1733184000\": 5, \"1733356800\": 3, \"1733443200\": 6, \"1733529600\": 2, \"1734307200\": 12, \"1734393600\": 1, \"1734480000\": 2, \"1734566400\": 2, \"1734652800\": 3, \"1734739200\": 2}"
+                    "totalActiveDays": 112,
+                    "submissionCalendar": "{\"1735776000\": 1, \"1736208000\": 1, \"1736294400\": 2, \"1736380800\": 1, \"1736726400\": 1, \"1736899200\": 2, \"1736985600\": 1, \"1737417600\": 3, \"1737590400\": 2, \"1737676800\": 1, \"1738022400\": 24, \"1738281600\": 5, \"1738454400\": 2, \"1738540800\": 17, \"1738627200\": 11, \"1738713600\": 4, \"1738800000\": 1, \"1738886400\": 21, \"1738972800\": 2, \"1739059200\": 2, \"1739145600\": 10, \"1739232000\": 8, \"1739318400\": 18, \"1739404800\": 4, \"1739491200\": 1, \"1739836800\": 2, \"1740096000\": 1, \"1740355200\": 8, \"1740614400\": 13, \"1740960000\": 6, \"1741046400\": 22, \"1741132800\": 9, \"1741219200\": 7, \"1741305600\": 1, \"1741392000\": 3, \"1741478400\": 1, \"1741564800\": 8, \"1741651200\": 7, \"1741737600\": 3, \"1741824000\": 20, \"1741910400\": 11, \"1741996800\": 4, \"1742083200\": 22, \"1742169600\": 8, \"1742256000\": 14, \"1742342400\": 8, \"1742428800\": 4, \"1742515200\": 5, \"1742601600\": 1, \"1742688000\": 4, \"1742774400\": 1, \"1742860800\": 3, \"1742947200\": 8, \"1743033600\": 1, \"1743120000\": 2, \"1743206400\": 1, \"1743292800\": 2, \"1743379200\": 2, \"1743465600\": 4, \"1743552000\": 7, \"1743638400\": 4, \"1743724800\": 3, \"1743811200\": 3, \"1743897600\": 1, \"1743984000\": 2, \"1744070400\": 1, \"1744156800\": 3, \"1744243200\": 4, \"1744416000\": 1, \"1744588800\": 1, \"1745884800\": 1, \"1745971200\": 1, \"1746403200\": 3, \"1746489600\": 1, \"1728604800\": 2, \"1728691200\": 2, \"1728777600\": 6, \"1728864000\": 11, \"1728950400\": 6, \"1729036800\": 25, \"1729123200\": 6, \"1729382400\": 4, \"1729468800\": 16, \"1729555200\": 38, \"1729641600\": 16, \"1729728000\": 8, \"1729814400\": 4, \"1729987200\": 5, \"1730073600\": 3, \"1730246400\": 6, \"1730678400\": 10, \"1730764800\": 1, \"1730851200\": 6, \"1730937600\": 1, \"1731283200\": 8, \"1731369600\": 1, \"1731456000\": 1, \"1731888000\": 4, \"1732579200\": 1, \"1732752000\": 4, \"1732838400\": 2, \"1733097600\": 5, \"1733184000\": 5, \"1733356800\": 3, \"1733443200\": 6, \"1733529600\": 2, \"1734307200\": 12, \"1734393600\": 1, \"1734480000\": 2, \"1734566400\": 2, \"1734652800\": 3, \"1734739200\": 2}"
                 }
             }
         }

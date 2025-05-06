@@ -7,10 +7,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago, timedelta
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'modules'))
-
-# Now import your functions
-from strava_m import extract_strava_data, transform_strava_data, load_strava_data
+from modules.strava_m import extract_strava_data, transform_strava_data, load_strava_data
 
 ''' Defining the default arguments for this DAG '''
 default_args = {

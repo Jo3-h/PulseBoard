@@ -67,7 +67,7 @@ export default function Layout({ children }) {
         </div>
       </nav>
       <div
-        className={`w-full h-auto bg-d-display px-10 flex flex-col md:hidden overflow-hidden
+        className={`w-full h-auto bg-d-display px-10 flex flex-col lg:hidden overflow-hidden
         ${expandMenu ? "max-h-300" : "max-h-0"}
         transition-all duration-500 ease-in-out
         items-center justify-center
@@ -78,6 +78,14 @@ export default function Layout({ children }) {
             <Link
               key={index}
               to={`/${item.name.toLowerCase()}`}
+              onClick={() => {
+                setActiveContent(item.name);
+                setTimeout(() => {
+                  document
+                    .getElementById("content-section")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 300);
+              }}
               className="w-full h-12 my-1 bg-m-display rounded-2xl flex items-center justify-center text-white font-extrabold tracking-[6px]"
             >
               {item.name}

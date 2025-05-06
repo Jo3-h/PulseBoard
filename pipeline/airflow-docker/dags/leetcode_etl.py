@@ -8,11 +8,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 from airflow.utils.dates import timedelta
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'modules'))
-
-# Now import your functions
-from leetcode_m import extract_leetcode_data, transform_leetcode_data, load_leetcode_data
+from modules.leetcode_m import extract_leetcode_data, transform_leetcode_data, load_leetcode_data
 
 
 ''' Defining the default arguments for this DAG '''
