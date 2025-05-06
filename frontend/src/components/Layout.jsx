@@ -195,7 +195,14 @@ export default function Layout({ children }) {
               <Link
                 key={item.name}
                 to={`/${item.name.toLowerCase()}`}
-                onClick={() => setActiveContent(item.name)}
+                onClick={() => {
+                  setActiveContent(item.name);
+                  setTimeout(() => {
+                    document
+                      .getElementById("content-section")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }, 300);
+                }}
               >
                 <NavCard
                   title={item.name}
@@ -212,7 +219,7 @@ export default function Layout({ children }) {
       {/* upto lg breakpoint nav bar */}
 
       {/* main page content */}
-      {children}
+      <div id="content-section">{children}</div>
 
       {/* footer content */}
       <Footer />
