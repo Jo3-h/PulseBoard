@@ -39,6 +39,9 @@ def extract_github_data():
         
         response = requests.get(f'{BASE_URL}repos/{repo["owner"]}/{repo["repo_name"]}/commits', headers=HEADERS)
         commits = response.json()
+        if type(commits) != list:
+            print(f'Error with Commit type: {commits} for {repo["repo_name"]}')
+            continue
 
         for commit in commits:
             data.append({

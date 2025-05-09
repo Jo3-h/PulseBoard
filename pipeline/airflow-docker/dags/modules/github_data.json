@@ -968,6 +968,17 @@
         "created_at": "2025-03-05T06:26:45Z"
     },
     {
+        "event_id": "f7622242c247dc27bae824eef2035f185b0793ca",
+        "event_type": "commit",
+        "repo_owner": "Jo3-h",
+        "repo_name": "PulseBoard",
+        "repo_url": "https://github.com/Jo3-h/PulseBoard",
+        "is_private": false,
+        "action": "moved modules folder to be within dags",
+        "commit_count": 1,
+        "created_at": "2025-05-06T21:51:48Z"
+    },
+    {
         "event_id": "b5c19bc1ab7109d6cc7ab2cafd249d526ed42d75",
         "event_type": "commit",
         "repo_owner": "Jo3-h",
@@ -1285,17 +1296,6 @@
         "action": "NavCard debug",
         "commit_count": 1,
         "created_at": "2025-04-12T05:26:01Z"
-    },
-    {
-        "event_id": "e941e79fe38507d7690769ce552586ac993df81f",
-        "event_type": "commit",
-        "repo_owner": "Jo3-h",
-        "repo_name": "PulseBoard",
-        "repo_url": "https://github.com/Jo3-h/PulseBoard",
-        "is_private": false,
-        "action": "Update README.md",
-        "commit_count": 1,
-        "created_at": "2025-04-12T05:19:37Z"
     },
     {
         "event_id": "189aefc5f5ebbd810e024216e5af22afbc3f1e16",

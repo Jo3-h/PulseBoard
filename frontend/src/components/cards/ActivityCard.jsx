@@ -178,24 +178,8 @@ export default function ActivityCard({ item }) {
         <div className="w-full h-auto min-h-30 bg-offwhite rounded-b-xl flex flex-col md:flex-row p-2">
           {/* Left side: icon and polka dot pattern */}
           <div className="h-auto w-full md:max-w-2/5 min-w-[220px] px-5 py-[15px] flex flex-col items-center">
-            <div className="h-[130px] w-[180px] overflow-hidden relative">
-              <div
-                className={`absolute w-full bg-white h-[100px] border-x border-t bottom-0 z-1 ${
-                  expanded ? "" : "border-b"
-                } transition-all duration-500`}
-              ></div>
-              <div
-                className="absolute w-full h-[100px] bottom-0 z-10 pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-30"
-                style={{
-                  background:
-                    "radial-gradient(circle at center, rgba(84, 143, 214, 1), rgba(84, 143, 214, 0))",
-                }}
-              />
-              <img
-                src={icon}
-                className="absolute top-0 -translate-x-1/2 translate-y-0 left-1/2 z-20"
-                loading="lazy"
-              />
+            <div className="h-[130px] w-full overflow-hidden relative flex items-center justify-center bg-[linear-gradient(to_right,_transparent,_white,_transparent)]">
+              <img src={icon} className="h-full w-auto" />
             </div>
 
             <div

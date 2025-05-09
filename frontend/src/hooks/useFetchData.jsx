@@ -6,12 +6,14 @@ export default function useFetchData({ endpoint }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/api/${endpoint}`);
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/${endpoint}`
+        );
         const projectData = await response.json();
 
         setContent(projectData);
       } catch (error) {
-        console.error("Error fetching Projects: ", error);
+        console.error("Error fetching: ", error);
       }
     };
 
